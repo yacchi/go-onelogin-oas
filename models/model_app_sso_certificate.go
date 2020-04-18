@@ -16,8 +16,8 @@ import (
 
 // AppSsoCertificate struct for AppSsoCertificate
 type AppSsoCertificate struct {
-	Id *int32 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Id    *int32  `json:"id,omitempty"`
+	Name  *string `json:"name,omitempty"`
 	Value *string `json:"value,omitempty"`
 }
 

@@ -16,12 +16,12 @@ import (
 
 // PrivilegeRolesResponse struct for PrivilegeRolesResponse
 type PrivilegeRolesResponse struct {
-	Total *int32 `json:"total,omitempty"`
-	Roles *[]int32 `json:"roles,omitempty"`
-	BeforeCursor *string `json:"beforeCursor,omitempty"`
-	PreviousLink *string `json:"previousLink,omitempty"`
-	AfterCursor *string `json:"afterCursor,omitempty"`
-	NextLink *string `json:"nextLink,omitempty"`
+	Total        *int32   `json:"total,omitempty"`
+	Roles        *[]int32 `json:"roles,omitempty"`
+	BeforeCursor *string  `json:"beforeCursor,omitempty"`
+	PreviousLink *string  `json:"previousLink,omitempty"`
+	AfterCursor  *string  `json:"afterCursor,omitempty"`
+	NextLink     *string  `json:"nextLink,omitempty"`
 }
 
 // NewPrivilegeRolesResponse instantiates a new PrivilegeRolesResponse object

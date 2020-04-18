@@ -43,7 +43,7 @@ var (
 // APIClient manages communication with the OneLogin API API v1.1.0-oas3
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
-	cfg    *Configuration
+	cfg *Configuration
 }
 
 // NewAPIClient creates a new API client. Requires a userAgent string describing your application.
@@ -143,7 +143,6 @@ func parameterToJson(obj interface{}) (string, error) {
 	return string(jsonBuf), err
 }
 
-
 // callAPI do the request.
 func (c *APIClient) callAPI(request *http.Request) (*http.Response, error) {
 	if c.cfg.Debug {
@@ -152,7 +151,7 @@ func (c *APIClient) callAPI(request *http.Request) (*http.Response, error) {
 			return nil, err
 		}
 		log.Printf("\n%s\n", string(dump))
-        }
+	}
 
 	resp, err := c.cfg.HTTPClient.Do(request)
 	if err != nil {

@@ -12,13 +12,12 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // EventResponse struct for EventResponse
 type EventResponse struct {
 	Status *Status `json:"status,omitempty"`
-	Data *Event `json:"data,omitempty"`
+	Data   *Event  `json:"data,omitempty"`
 }
 
 // NewEventResponse instantiates a new EventResponse object

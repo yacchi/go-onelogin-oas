@@ -16,11 +16,11 @@ import (
 
 // ResponseUser struct for ResponseUser
 type ResponseUser struct {
-	Id *int32 `json:"id,omitempty"`
+	Id        *int32  `json:"id,omitempty"`
 	Firstname *string `json:"firstname,omitempty"`
-	Lastname *string `json:"lastname,omitempty"`
-	Username *string `json:"username,omitempty"`
-	Email *string `json:"email,omitempty"`
+	Lastname  *string `json:"lastname,omitempty"`
+	Username  *string `json:"username,omitempty"`
+	Email     *string `json:"email,omitempty"`
 }
 
 // NewResponseUser instantiates a new ResponseUser object

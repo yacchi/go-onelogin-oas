@@ -24,7 +24,7 @@ type InlineObject struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInlineObject(state int32, ) *InlineObject {
+func NewInlineObject(state int32) *InlineObject {
 	this := InlineObject{}
 	this.State = state
 	return &this
@@ -40,7 +40,7 @@ func NewInlineObjectWithDefaults() *InlineObject {
 
 // GetState returns the State field value
 func (o *InlineObject) GetState() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *InlineObject) GetState() int32 {
 // GetStateOk returns a tuple with the State field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject) GetStateOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.State, true

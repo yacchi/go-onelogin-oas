@@ -12,13 +12,12 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // UserRolesResponse struct for UserRolesResponse
 type UserRolesResponse struct {
-	Status *Status `json:"status,omitempty"`
-	Data *[]int32 `json:"data,omitempty"`
+	Status *Status  `json:"status,omitempty"`
+	Data   *[]int32 `json:"data,omitempty"`
 }
 
 // NewUserRolesResponse instantiates a new UserRolesResponse object

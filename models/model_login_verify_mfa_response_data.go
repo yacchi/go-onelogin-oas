@@ -12,16 +12,15 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // LoginVerifyMfaResponseData struct for LoginVerifyMfaResponseData
 type LoginVerifyMfaResponseData struct {
-	Status *string `json:"status,omitempty"`
-	User *ResponseUser `json:"user,omitempty"`
-	ReturnToUrl *string `json:"return_to_url,omitempty"`
-	ExpiresAt *string `json:"expires_at,omitempty"`
-	SessionToken *string `json:"session_token,omitempty"`
+	Status       *string       `json:"status,omitempty"`
+	User         *ResponseUser `json:"user,omitempty"`
+	ReturnToUrl  *string       `json:"return_to_url,omitempty"`
+	ExpiresAt    *string       `json:"expires_at,omitempty"`
+	SessionToken *string       `json:"session_token,omitempty"`
 }
 
 // NewLoginVerifyMfaResponseData instantiates a new LoginVerifyMfaResponseData object

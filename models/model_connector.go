@@ -16,11 +16,11 @@ import (
 
 // Connector struct for Connector
 type Connector struct {
-	Id *int32 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	IconUrl *string `json:"icon_url,omitempty"`
-	AuthMethod *int32 `json:"auth_method,omitempty"`
-	AllowsNewParameters *bool `json:"allows_new_parameters,omitempty"`
+	Id                  *int32  `json:"id,omitempty"`
+	Name                *string `json:"name,omitempty"`
+	IconUrl             *string `json:"icon_url,omitempty"`
+	AuthMethod          *int32  `json:"auth_method,omitempty"`
+	AllowsNewParameters *bool   `json:"allows_new_parameters,omitempty"`
 }
 
 // NewConnector instantiates a new Connector object

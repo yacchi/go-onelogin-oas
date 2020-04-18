@@ -15,8 +15,9 @@ import (
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
-	"github.com/yacchi/go-onelogin-oas/models"
 	"strings"
+
+	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // Linger please
@@ -25,12 +26,11 @@ var (
 )
 
 type apiAddPrivilegeRolesRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id string
+	ctx            _context.Context
+	client         *APIClient
+	id             string
 	inlineObject12 *models.InlineObject12
 }
-
 
 func (r apiAddPrivilegeRolesRequest) InlineObject12(inlineObject12 models.InlineObject12) apiAddPrivilegeRolesRequest {
 	r.inlineObject12 = &inlineObject12
@@ -47,8 +47,8 @@ Use this API to assign a privilege to one or more roles.
 func (c *APIClient) AddPrivilegeRoles(ctx _context.Context, id string) apiAddPrivilegeRolesRequest {
 	return apiAddPrivilegeRolesRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -72,13 +72,12 @@ func (r apiAddPrivilegeRolesRequest) Execute() (models.AssignPrivilegeRolesRespo
 	}
 
 	localVarPath := localBasePath + "/1/privileges/{id}/roles"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	if r.inlineObject12 == nil {
 		return localVarReturnValue, nil, reportError("inlineObject12 is required and must be specified")
 	}
@@ -166,13 +165,13 @@ func (r apiAddPrivilegeRolesRequest) Execute() (models.AssignPrivilegeRolesRespo
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiAddPrivilegeUsersRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id string
+	ctx            _context.Context
+	client         *APIClient
+	id             string
 	inlineObject13 *models.InlineObject13
 }
-
 
 func (r apiAddPrivilegeUsersRequest) InlineObject13(inlineObject13 models.InlineObject13) apiAddPrivilegeUsersRequest {
 	r.inlineObject13 = &inlineObject13
@@ -189,8 +188,8 @@ Use this API to assign a privilege to one or more users.
 func (c *APIClient) AddPrivilegeUsers(ctx _context.Context, id string) apiAddPrivilegeUsersRequest {
 	return apiAddPrivilegeUsersRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -214,13 +213,12 @@ func (r apiAddPrivilegeUsersRequest) Execute() (models.AssignPrivilegeRolesRespo
 	}
 
 	localVarPath := localBasePath + "/1/privileges/{id}/users"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	if r.inlineObject13 == nil {
 		return localVarReturnValue, nil, reportError("inlineObject13 is required and must be specified")
 	}
@@ -308,12 +306,12 @@ func (r apiAddPrivilegeUsersRequest) Execute() (models.AssignPrivilegeRolesRespo
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiCreatePrivilegeRequest struct {
-	ctx _context.Context
-	client *APIClient
+	ctx       _context.Context
+	client    *APIClient
 	privilege *models.Privilege
 }
-
 
 func (r apiCreatePrivilegeRequest) Privilege(privilege models.Privilege) apiCreatePrivilegeRequest {
 	r.privilege = &privilege
@@ -322,14 +320,14 @@ func (r apiCreatePrivilegeRequest) Privilege(privilege models.Privilege) apiCrea
 
 /*
 CreatePrivilege Creates privilege
-Creates a privilege    
+Creates a privilege
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 @return apiCreatePrivilegeRequest
 */
 func (c *APIClient) CreatePrivilege(ctx _context.Context) apiCreatePrivilegeRequest {
 	return apiCreatePrivilegeRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -357,7 +355,7 @@ func (r apiCreatePrivilegeRequest) Execute() (models.CreatePrivilegeResponse, *_
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -452,16 +450,16 @@ func (r apiCreatePrivilegeRequest) Execute() (models.CreatePrivilegeResponse, *_
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiDeletePrivilegeRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id string
-}
 
+type apiDeletePrivilegeRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     string
+}
 
 /*
 DeletePrivilege Delete privilege
-Delete a privilege    
+Delete a privilege
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id Privilege ID
 @return apiDeletePrivilegeRequest
@@ -469,8 +467,8 @@ Delete a privilege
 func (c *APIClient) DeletePrivilege(ctx _context.Context, id string) apiDeletePrivilegeRequest {
 	return apiDeletePrivilegeRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -485,7 +483,6 @@ func (r apiDeletePrivilegeRequest) Execute() (*_nethttp.Response, error) {
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		
 	)
 
 	localBasePath, err := r.client.cfg.ServerURLWithContext(r.ctx, "PrivilegesApiService.DeletePrivilege")
@@ -494,12 +491,11 @@ func (r apiDeletePrivilegeRequest) Execute() (*_nethttp.Response, error) {
 	}
 
 	localVarPath := localBasePath + "/1/privileges/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -563,16 +559,16 @@ func (r apiDeletePrivilegeRequest) Execute() (*_nethttp.Response, error) {
 
 	return localVarHTTPResponse, nil
 }
-type apiGetPrivilegeRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id string
-}
 
+type apiGetPrivilegeRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     string
+}
 
 /*
 GetPrivilege Get privilege
-Get a privilege    
+Get a privilege
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id Privilege ID
 @return apiGetPrivilegeRequest
@@ -580,8 +576,8 @@ Get a privilege
 func (c *APIClient) GetPrivilege(ctx _context.Context, id string) apiGetPrivilegeRequest {
 	return apiGetPrivilegeRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -596,7 +592,6 @@ func (r apiGetPrivilegeRequest) Execute() (*_nethttp.Response, error) {
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		
 	)
 
 	localBasePath, err := r.client.cfg.ServerURLWithContext(r.ctx, "PrivilegesApiService.GetPrivilege")
@@ -605,12 +600,11 @@ func (r apiGetPrivilegeRequest) Execute() (*_nethttp.Response, error) {
 	}
 
 	localVarPath := localBasePath + "/1/privileges/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -674,16 +668,16 @@ func (r apiGetPrivilegeRequest) Execute() (*_nethttp.Response, error) {
 
 	return localVarHTTPResponse, nil
 }
-type apiGetPrivilegeRolesRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id string
-}
 
+type apiGetPrivilegeRolesRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     string
+}
 
 /*
 GetPrivilegeRoles Get roles
-Get roles assigned to a privilege  
+Get roles assigned to a privilege
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id Privilege ID
 @return apiGetPrivilegeRolesRequest
@@ -691,8 +685,8 @@ Get roles assigned to a privilege
 func (c *APIClient) GetPrivilegeRoles(ctx _context.Context, id string) apiGetPrivilegeRolesRequest {
 	return apiGetPrivilegeRolesRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -716,12 +710,11 @@ func (r apiGetPrivilegeRolesRequest) Execute() (models.PrivilegeRolesResponse, *
 	}
 
 	localVarPath := localBasePath + "/1/privileges/{id}/roles"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -804,16 +797,16 @@ func (r apiGetPrivilegeRolesRequest) Execute() (models.PrivilegeRolesResponse, *
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiGetPrivilegeUsersRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id string
-}
 
+type apiGetPrivilegeUsersRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     string
+}
 
 /*
 GetPrivilegeUsers Get privilege users
-Get users assigned to a privilege  
+Get users assigned to a privilege
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id Privilege ID
 @return apiGetPrivilegeUsersRequest
@@ -821,8 +814,8 @@ Get users assigned to a privilege
 func (c *APIClient) GetPrivilegeUsers(ctx _context.Context, id string) apiGetPrivilegeUsersRequest {
 	return apiGetPrivilegeUsersRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -846,12 +839,11 @@ func (r apiGetPrivilegeUsersRequest) Execute() (models.PrivilegeUsersResponse, *
 	}
 
 	localVarPath := localBasePath + "/1/privileges/{id}/users"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -934,11 +926,11 @@ func (r apiGetPrivilegeUsersRequest) Execute() (models.PrivilegeUsersResponse, *
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiGetPrivilegesRequest struct {
-	ctx _context.Context
+	ctx    _context.Context
 	client *APIClient
 }
-
 
 /*
 GetPrivileges Get Privileges
@@ -949,7 +941,7 @@ Use this API to list the Privileges created in an account.
 func (c *APIClient) GetPrivileges(ctx _context.Context) apiGetPrivilegesRequest {
 	return apiGetPrivilegesRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -1049,13 +1041,13 @@ func (r apiGetPrivilegesRequest) Execute() ([]models.Privilege, *_nethttp.Respon
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiRemovePrivilegeRoleRequest struct {
-	ctx _context.Context
+	ctx    _context.Context
 	client *APIClient
-	id string
+	id     string
 	roleId int32
 }
-
 
 /*
 RemovePrivilegeRole Remove a role
@@ -1068,8 +1060,8 @@ Use this API to remove a single role from a privilege.
 func (c *APIClient) RemovePrivilegeRole(ctx _context.Context, id string, roleId int32) apiRemovePrivilegeRoleRequest {
 	return apiRemovePrivilegeRoleRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 		roleId: roleId,
 	}
 }
@@ -1085,7 +1077,6 @@ func (r apiRemovePrivilegeRoleRequest) Execute() (*_nethttp.Response, error) {
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		
 	)
 
 	localBasePath, err := r.client.cfg.ServerURLWithContext(r.ctx, "PrivilegesApiService.RemovePrivilegeRole")
@@ -1094,14 +1085,12 @@ func (r apiRemovePrivilegeRoleRequest) Execute() (*_nethttp.Response, error) {
 	}
 
 	localVarPath := localBasePath + "/1/privileges/{id}/roles/{role_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"role_id"+"}", _neturl.QueryEscape(parameterToString(r.roleId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_id"+"}", _neturl.QueryEscape(parameterToString(r.roleId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1165,13 +1154,13 @@ func (r apiRemovePrivilegeRoleRequest) Execute() (*_nethttp.Response, error) {
 
 	return localVarHTTPResponse, nil
 }
+
 type apiRemovePrivlegeUserRequest struct {
-	ctx _context.Context
+	ctx    _context.Context
 	client *APIClient
-	id string
+	id     string
 	userId int32
 }
-
 
 /*
 RemovePrivlegeUser Remove a user
@@ -1184,8 +1173,8 @@ Use this API to remove a single user from a privilege.
 func (c *APIClient) RemovePrivlegeUser(ctx _context.Context, id string, userId int32) apiRemovePrivlegeUserRequest {
 	return apiRemovePrivlegeUserRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 		userId: userId,
 	}
 }
@@ -1201,7 +1190,6 @@ func (r apiRemovePrivlegeUserRequest) Execute() (*_nethttp.Response, error) {
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		
 	)
 
 	localBasePath, err := r.client.cfg.ServerURLWithContext(r.ctx, "PrivilegesApiService.RemovePrivlegeUser")
@@ -1210,14 +1198,12 @@ func (r apiRemovePrivlegeUserRequest) Execute() (*_nethttp.Response, error) {
 	}
 
 	localVarPath := localBasePath + "/1/privileges/{id}/users/{user_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", _neturl.QueryEscape(parameterToString(r.userId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", _neturl.QueryEscape(parameterToString(r.userId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1281,13 +1267,13 @@ func (r apiRemovePrivlegeUserRequest) Execute() (*_nethttp.Response, error) {
 
 	return localVarHTTPResponse, nil
 }
+
 type apiUpdatePrivilegeRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id string
+	ctx       _context.Context
+	client    *APIClient
+	id        string
 	privilege *models.Privilege
 }
-
 
 func (r apiUpdatePrivilegeRequest) Privilege(privilege models.Privilege) apiUpdatePrivilegeRequest {
 	r.privilege = &privilege
@@ -1296,7 +1282,7 @@ func (r apiUpdatePrivilegeRequest) Privilege(privilege models.Privilege) apiUpda
 
 /*
 UpdatePrivilege Update privilege
-Update a privilege    
+Update a privilege
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param id Privilege ID
 @return apiUpdatePrivilegeRequest
@@ -1304,8 +1290,8 @@ Update a privilege
 func (c *APIClient) UpdatePrivilege(ctx _context.Context, id string) apiUpdatePrivilegeRequest {
 	return apiUpdatePrivilegeRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -1329,13 +1315,12 @@ func (r apiUpdatePrivilegeRequest) Execute() (models.CreatePrivilegeResponse, *_
 	}
 
 	localVarPath := localBasePath + "/1/privileges/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 

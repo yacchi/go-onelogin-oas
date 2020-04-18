@@ -12,13 +12,12 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // SamlAssertionResponse struct for SamlAssertionResponse
 type SamlAssertionResponse struct {
 	Status *Status `json:"status,omitempty"`
-	Data *string `json:"data,omitempty"`
+	Data   *string `json:"data,omitempty"`
 }
 
 // NewSamlAssertionResponse instantiates a new SamlAssertionResponse object

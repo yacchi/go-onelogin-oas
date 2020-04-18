@@ -32,7 +32,7 @@ type InlineObject9 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInlineObject9(appId int32, deviceId int32, stateToken string, ) *InlineObject9 {
+func NewInlineObject9(appId int32, deviceId int32, stateToken string) *InlineObject9 {
 	this := InlineObject9{}
 	this.AppId = appId
 	this.DeviceId = deviceId
@@ -54,7 +54,7 @@ func NewInlineObject9WithDefaults() *InlineObject9 {
 
 // GetAppId returns the AppId field value
 func (o *InlineObject9) GetAppId() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *InlineObject9) GetAppId() int32 {
 // GetAppIdOk returns a tuple with the AppId field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject9) GetAppIdOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AppId, true
@@ -78,7 +78,7 @@ func (o *InlineObject9) SetAppId(v int32) {
 
 // GetDeviceId returns the DeviceId field value
 func (o *InlineObject9) GetDeviceId() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *InlineObject9) GetDeviceId() int32 {
 // GetDeviceIdOk returns a tuple with the DeviceId field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject9) GetDeviceIdOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DeviceId, true
@@ -102,7 +102,7 @@ func (o *InlineObject9) SetDeviceId(v int32) {
 
 // GetStateToken returns the StateToken field value
 func (o *InlineObject9) GetStateToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *InlineObject9) GetStateToken() string {
 // GetStateTokenOk returns a tuple with the StateToken field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject9) GetStateTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.StateToken, true

@@ -16,7 +16,7 @@ import (
 
 // ResponseDevices struct for ResponseDevices
 type ResponseDevices struct {
-	DeviceId *int32 `json:"device_id,omitempty"`
+	DeviceId   *int32  `json:"device_id,omitempty"`
 	DeviceType *string `json:"device_type,omitempty"`
 }
 

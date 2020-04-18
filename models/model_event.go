@@ -12,51 +12,50 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 	"time"
 )
 
 // Event struct for Event
 type Event struct {
-	AccountId int32 `json:"account_id"`
+	AccountId   int32 `json:"account_id"`
 	EventTypeId int32 `json:"event_type_id"`
 	// The Event ID
 	Id *int32 `json:"id,omitempty"`
 	// The date/time the Event was created
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UserId *int32 `json:"user_id,omitempty"`
-	Notes *string `json:"notes,omitempty"`
-	Ipaddr *string `json:"ipaddr,omitempty"`
-	ActorUserId *int32 `json:"actor_user_id,omitempty"`
-	AssumingActingUserId *int32 `json:"assuming_acting_user_id,omitempty"`
-	RoleId *int32 `json:"role_id,omitempty"`
-	AppId *int32 `json:"app_id,omitempty"`
-	GroupId *int32 `json:"group_id,omitempty"`
-	OtpDeviceId *int32 `json:"otp_device_id,omitempty"`
-	PolicyId *int32 `json:"policy_id,omitempty"`
-	ActorSystem *string `json:"actor_system,omitempty"`
-	CustomMessage *string `json:"custom_message,omitempty"`
-	RoleName *string `json:"role_name,omitempty"`
-	AppName *string `json:"app_name,omitempty"`
-	GroupName *string `json:"group_name,omitempty"`
-	ActorUserName *string `json:"actor_user_name,omitempty"`
-	UserName *string `json:"user_name,omitempty"`
-	PolicyName *string `json:"policy_name,omitempty"`
-	OtpDeviceName *string `json:"otp_device_name,omitempty"`
-	OperationName *string `json:"operation_name,omitempty"`
-	DirectorySyncRunId *int32 `json:"directory_sync_run_id,omitempty"`
-	DirectoryId *int32 `json:"directory_id,omitempty"`
-	Resolution *string `json:"resolution,omitempty"`
-	ClientId *string `json:"client_id,omitempty"`
-	ResourcseTypeId *int32 `json:"resourcse_type_id,omitempty"`
-	ErrorDescription *string `json:"error_description,omitempty"`
+	CreatedAt            *time.Time `json:"created_at,omitempty"`
+	UserId               *int32     `json:"user_id,omitempty"`
+	Notes                *string    `json:"notes,omitempty"`
+	Ipaddr               *string    `json:"ipaddr,omitempty"`
+	ActorUserId          *int32     `json:"actor_user_id,omitempty"`
+	AssumingActingUserId *int32     `json:"assuming_acting_user_id,omitempty"`
+	RoleId               *int32     `json:"role_id,omitempty"`
+	AppId                *int32     `json:"app_id,omitempty"`
+	GroupId              *int32     `json:"group_id,omitempty"`
+	OtpDeviceId          *int32     `json:"otp_device_id,omitempty"`
+	PolicyId             *int32     `json:"policy_id,omitempty"`
+	ActorSystem          *string    `json:"actor_system,omitempty"`
+	CustomMessage        *string    `json:"custom_message,omitempty"`
+	RoleName             *string    `json:"role_name,omitempty"`
+	AppName              *string    `json:"app_name,omitempty"`
+	GroupName            *string    `json:"group_name,omitempty"`
+	ActorUserName        *string    `json:"actor_user_name,omitempty"`
+	UserName             *string    `json:"user_name,omitempty"`
+	PolicyName           *string    `json:"policy_name,omitempty"`
+	OtpDeviceName        *string    `json:"otp_device_name,omitempty"`
+	OperationName        *string    `json:"operation_name,omitempty"`
+	DirectorySyncRunId   *int32     `json:"directory_sync_run_id,omitempty"`
+	DirectoryId          *int32     `json:"directory_id,omitempty"`
+	Resolution           *string    `json:"resolution,omitempty"`
+	ClientId             *string    `json:"client_id,omitempty"`
+	ResourcseTypeId      *int32     `json:"resourcse_type_id,omitempty"`
+	ErrorDescription     *string    `json:"error_description,omitempty"`
 }
 
 // NewEvent instantiates a new Event object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEvent(accountId int32, eventTypeId int32, ) *Event {
+func NewEvent(accountId int32, eventTypeId int32) *Event {
 	this := Event{}
 	this.AccountId = accountId
 	this.EventTypeId = eventTypeId
@@ -73,7 +72,7 @@ func NewEventWithDefaults() *Event {
 
 // GetAccountId returns the AccountId field value
 func (o *Event) GetAccountId() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -84,7 +83,7 @@ func (o *Event) GetAccountId() int32 {
 // GetAccountIdOk returns a tuple with the AccountId field value
 // and a boolean to check if the value has been set.
 func (o *Event) GetAccountIdOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AccountId, true
@@ -97,7 +96,7 @@ func (o *Event) SetAccountId(v int32) {
 
 // GetEventTypeId returns the EventTypeId field value
 func (o *Event) GetEventTypeId() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -108,7 +107,7 @@ func (o *Event) GetEventTypeId() int32 {
 // GetEventTypeIdOk returns a tuple with the EventTypeId field value
 // and a boolean to check if the value has been set.
 func (o *Event) GetEventTypeIdOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.EventTypeId, true

@@ -16,15 +16,15 @@ import (
 
 // MfaDevice struct for MfaDevice
 type MfaDevice struct {
-	Active *bool `json:"active,omitempty"`
-	Default *bool `json:"default,omitempty"`
-	StateToken *string `json:"state_token,omitempty"`
-	AuthFactorName *string `json:"auth_factor_name,omitempty"`
-	PhoneNumber *string `json:"phone_number,omitempty"`
+	Active          *bool   `json:"active,omitempty"`
+	Default         *bool   `json:"default,omitempty"`
+	StateToken      *string `json:"state_token,omitempty"`
+	AuthFactorName  *string `json:"auth_factor_name,omitempty"`
+	PhoneNumber     *string `json:"phone_number,omitempty"`
 	TypeDisplayName *string `json:"type_display_name,omitempty"`
-	NeedsTrigger *bool `json:"needs_trigger,omitempty"`
+	NeedsTrigger    *bool   `json:"needs_trigger,omitempty"`
 	UserDisplayName *string `json:"user_display_name,omitempty"`
-	Id *int32 `json:"id,omitempty"`
+	Id              *int32  `json:"id,omitempty"`
 }
 
 // NewMfaDevice instantiates a new MfaDevice object

@@ -12,7 +12,6 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 	"time"
 )
 
@@ -32,21 +31,21 @@ type User struct {
 	GroupId *int32 `json:"group_id,omitempty"`
 	// Number of sequential invalid login attempts the user has made that is less than or equal to the Maximum invalid login attempts value defined on the Session page in OneLogin. When this number reaches this value, the user account will be locked for the amount of time defined by the Lock effective period field on the Session page and this value will be reset to 0.
 	InvalidLoginAttempts *int32 `json:"invalid_login_attempts,omitempty"`
-	// Date and time at which the user’s status was set to 1 (active)      
+	// Date and time at which the user’s status was set to 1 (active)
 	ActivatedAt *time.Time `json:"activated_at,omitempty"`
-	// Date and time at which the user was created 
+	// Date and time at which the user was created
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	// Date and time at which the user’s information was last updated
 	UpdatedAt *time.Time `json:"updated_at,omitempty"`
-	// Date and time at which an invitation to OneLogin was sent to the user 
+	// Date and time at which an invitation to OneLogin was sent to the user
 	InvitationSentAt *time.Time `json:"invitation_sent_at,omitempty"`
 	// Date and time at which the user’s password was last changed
 	PasswordChangedAt *time.Time `json:"password_changed_at,omitempty"`
-	// Date and time of the user’s last login 
+	// Date and time of the user’s last login
 	LastLogin *time.Time `json:"last_login,omitempty"`
-	// Date and time at which the user’s account will be unlocked 
+	// Date and time at which the user’s account will be unlocked
 	LockedUntil *time.Time `json:"locked_until,omitempty"`
-	Notes *string `json:"notes,omitempty"`
+	Notes       *string    `json:"notes,omitempty"`
 	// OpenID URL that can be configured in other applications that accept OpenID for sign-in
 	OpenidName *string `json:"openid_name,omitempty"`
 	// Represents a geographical, political, or cultural region. Some features may use the locale value to tailor the display of information, such as numbers, for the user based on locale-specific customs and conventions
@@ -81,7 +80,7 @@ type User struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUser(email string, username string, firstname string, lastname string, ) *User {
+func NewUser(email string, username string, firstname string, lastname string) *User {
 	this := User{}
 	this.Email = email
 	this.Username = username
@@ -132,7 +131,7 @@ func (o *User) SetId(v int32) {
 
 // GetEmail returns the Email field value
 func (o *User) GetEmail() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -143,7 +142,7 @@ func (o *User) GetEmail() string {
 // GetEmailOk returns a tuple with the Email field value
 // and a boolean to check if the value has been set.
 func (o *User) GetEmailOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Email, true
@@ -156,7 +155,7 @@ func (o *User) SetEmail(v string) {
 
 // GetUsername returns the Username field value
 func (o *User) GetUsername() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -167,7 +166,7 @@ func (o *User) GetUsername() string {
 // GetUsernameOk returns a tuple with the Username field value
 // and a boolean to check if the value has been set.
 func (o *User) GetUsernameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Username, true
@@ -180,7 +179,7 @@ func (o *User) SetUsername(v string) {
 
 // GetFirstname returns the Firstname field value
 func (o *User) GetFirstname() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -191,7 +190,7 @@ func (o *User) GetFirstname() string {
 // GetFirstnameOk returns a tuple with the Firstname field value
 // and a boolean to check if the value has been set.
 func (o *User) GetFirstnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Firstname, true
@@ -204,7 +203,7 @@ func (o *User) SetFirstname(v string) {
 
 // GetLastname returns the Lastname field value
 func (o *User) GetLastname() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -215,7 +214,7 @@ func (o *User) GetLastname() string {
 // GetLastnameOk returns a tuple with the Lastname field value
 // and a boolean to check if the value has been set.
 func (o *User) GetLastnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Lastname, true

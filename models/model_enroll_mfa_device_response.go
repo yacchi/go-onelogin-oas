@@ -12,13 +12,12 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // EnrollMfaDeviceResponse struct for EnrollMfaDeviceResponse
 type EnrollMfaDeviceResponse struct {
-	Status *Status `json:"status,omitempty"`
-	Data *[]MfaDevice `json:"data,omitempty"`
+	Status *Status      `json:"status,omitempty"`
+	Data   *[]MfaDevice `json:"data,omitempty"`
 }
 
 // NewEnrollMfaDeviceResponse instantiates a new EnrollMfaDeviceResponse object

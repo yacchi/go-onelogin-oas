@@ -15,8 +15,9 @@ import (
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
-	"github.com/yacchi/go-onelogin-oas/models"
 	"strings"
+
+	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // Linger please
@@ -25,11 +26,10 @@ var (
 )
 
 type apiGetGroupRequest struct {
-	ctx _context.Context
+	ctx    _context.Context
 	client *APIClient
-	id int32
+	id     int32
 }
-
 
 /*
 GetGroup Get Group by ID
@@ -41,8 +41,8 @@ Use this call to get a group by ID.
 func (c *APIClient) GetGroup(ctx _context.Context, id int32) apiGetGroupRequest {
 	return apiGetGroupRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -66,12 +66,11 @@ func (r apiGetGroupRequest) Execute() (models.GroupResponse, *_nethttp.Response,
 	}
 
 	localVarPath := localBasePath + "/1/groups/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -174,11 +173,11 @@ func (r apiGetGroupRequest) Execute() (models.GroupResponse, *_nethttp.Response,
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiGetGroupsRequest struct {
-	ctx _context.Context
+	ctx    _context.Context
 	client *APIClient
 }
-
 
 /*
 GetGroups Get Groups
@@ -189,7 +188,7 @@ Use to get a list of groups that are available in your account. The call returns
 func (c *APIClient) GetGroups(ctx _context.Context) apiGetGroupsRequest {
 	return apiGetGroupsRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 

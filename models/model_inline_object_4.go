@@ -16,7 +16,7 @@ import (
 
 // InlineObject4 struct for InlineObject4
 type InlineObject4 struct {
-	// The new password 
+	// The new password
 	Password string `json:"password"`
 	// The new password repeated
 	PasswordConfirmation string `json:"password_confirmation"`
@@ -28,7 +28,7 @@ type InlineObject4 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInlineObject4(password string, passwordConfirmation string, ) *InlineObject4 {
+func NewInlineObject4(password string, passwordConfirmation string) *InlineObject4 {
 	this := InlineObject4{}
 	this.Password = password
 	this.PasswordConfirmation = passwordConfirmation
@@ -45,7 +45,7 @@ func NewInlineObject4WithDefaults() *InlineObject4 {
 
 // GetPassword returns the Password field value
 func (o *InlineObject4) GetPassword() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *InlineObject4) GetPassword() string {
 // GetPasswordOk returns a tuple with the Password field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject4) GetPasswordOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Password, true
@@ -69,7 +69,7 @@ func (o *InlineObject4) SetPassword(v string) {
 
 // GetPasswordConfirmation returns the PasswordConfirmation field value
 func (o *InlineObject4) GetPasswordConfirmation() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *InlineObject4) GetPasswordConfirmation() string {
 // GetPasswordConfirmationOk returns a tuple with the PasswordConfirmation field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject4) GetPasswordConfirmationOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PasswordConfirmation, true

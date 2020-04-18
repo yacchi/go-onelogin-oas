@@ -28,7 +28,7 @@ type InlineObject10 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInlineObject10(factorId int32, displayName string, number string, ) *InlineObject10 {
+func NewInlineObject10(factorId int32, displayName string, number string) *InlineObject10 {
 	this := InlineObject10{}
 	this.FactorId = factorId
 	this.DisplayName = displayName
@@ -46,7 +46,7 @@ func NewInlineObject10WithDefaults() *InlineObject10 {
 
 // GetFactorId returns the FactorId field value
 func (o *InlineObject10) GetFactorId() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *InlineObject10) GetFactorId() int32 {
 // GetFactorIdOk returns a tuple with the FactorId field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject10) GetFactorIdOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.FactorId, true
@@ -70,7 +70,7 @@ func (o *InlineObject10) SetFactorId(v int32) {
 
 // GetDisplayName returns the DisplayName field value
 func (o *InlineObject10) GetDisplayName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *InlineObject10) GetDisplayName() string {
 // GetDisplayNameOk returns a tuple with the DisplayName field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject10) GetDisplayNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DisplayName, true
@@ -94,7 +94,7 @@ func (o *InlineObject10) SetDisplayName(v string) {
 
 // GetNumber returns the Number field value
 func (o *InlineObject10) GetNumber() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *InlineObject10) GetNumber() string {
 // GetNumberOk returns a tuple with the Number field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject10) GetNumberOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Number, true

@@ -12,14 +12,13 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 	"time"
 )
 
 // GenerateMfaTokenResponse struct for GenerateMfaTokenResponse
 type GenerateMfaTokenResponse struct {
-	Reusable *bool `json:"reusable,omitempty"`
-	MfaToken *string `json:"mfa_token,omitempty"`
+	Reusable  *bool      `json:"reusable,omitempty"`
+	MfaToken  *string    `json:"mfa_token,omitempty"`
 	ExpiresAt *time.Time `json:"expires_at,omitempty"`
 }
 

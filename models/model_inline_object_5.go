@@ -16,7 +16,7 @@ import (
 
 // InlineObject5 struct for InlineObject5
 type InlineObject5 struct {
-	// The new password 
+	// The new password
 	Password string `json:"password"`
 	// The new password repeated
 	PasswordConfirmation string `json:"password_confirmation"`
@@ -30,7 +30,7 @@ type InlineObject5 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInlineObject5(password string, passwordConfirmation string, passwordAlgorithm string, ) *InlineObject5 {
+func NewInlineObject5(password string, passwordConfirmation string, passwordAlgorithm string) *InlineObject5 {
 	this := InlineObject5{}
 	this.Password = password
 	this.PasswordConfirmation = passwordConfirmation
@@ -48,7 +48,7 @@ func NewInlineObject5WithDefaults() *InlineObject5 {
 
 // GetPassword returns the Password field value
 func (o *InlineObject5) GetPassword() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *InlineObject5) GetPassword() string {
 // GetPasswordOk returns a tuple with the Password field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject5) GetPasswordOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Password, true
@@ -72,7 +72,7 @@ func (o *InlineObject5) SetPassword(v string) {
 
 // GetPasswordConfirmation returns the PasswordConfirmation field value
 func (o *InlineObject5) GetPasswordConfirmation() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *InlineObject5) GetPasswordConfirmation() string {
 // GetPasswordConfirmationOk returns a tuple with the PasswordConfirmation field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject5) GetPasswordConfirmationOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PasswordConfirmation, true
@@ -96,7 +96,7 @@ func (o *InlineObject5) SetPasswordConfirmation(v string) {
 
 // GetPasswordAlgorithm returns the PasswordAlgorithm field value
 func (o *InlineObject5) GetPasswordAlgorithm() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *InlineObject5) GetPasswordAlgorithm() string {
 // GetPasswordAlgorithmOk returns a tuple with the PasswordAlgorithm field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject5) GetPasswordAlgorithmOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PasswordAlgorithm, true

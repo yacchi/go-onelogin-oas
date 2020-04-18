@@ -15,6 +15,7 @@ import (
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
+
 	"github.com/yacchi/go-onelogin-oas/models"
 )
 
@@ -24,11 +25,10 @@ var (
 )
 
 type apiCreateInviteLinkRequest struct {
-	ctx _context.Context
-	client *APIClient
+	ctx            _context.Context
+	client         *APIClient
 	inlineObject14 *models.InlineObject14
 }
-
 
 func (r apiCreateInviteLinkRequest) InlineObject14(inlineObject14 models.InlineObject14) apiCreateInviteLinkRequest {
 	r.inlineObject14 = &inlineObject14
@@ -44,7 +44,7 @@ Generate an invite link for a user already created in your OneLogin account.
 func (c *APIClient) CreateInviteLink(ctx _context.Context) apiCreateInviteLinkRequest {
 	return apiCreateInviteLinkRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -72,7 +72,7 @@ func (r apiCreateInviteLinkRequest) Execute() (models.CustomAttributesResponse, 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -156,12 +156,12 @@ func (r apiCreateInviteLinkRequest) Execute() (models.CustomAttributesResponse, 
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiSendInviteLinkRequest struct {
-	ctx _context.Context
-	client *APIClient
+	ctx            _context.Context
+	client         *APIClient
 	inlineObject15 *models.InlineObject15
 }
-
 
 func (r apiSendInviteLinkRequest) InlineObject15(inlineObject15 models.InlineObject15) apiSendInviteLinkRequest {
 	r.inlineObject15 = &inlineObject15
@@ -177,7 +177,7 @@ Send an invite link to an existing user in your OneLogin account.
 func (c *APIClient) SendInviteLink(ctx _context.Context) apiSendInviteLinkRequest {
 	return apiSendInviteLinkRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -205,7 +205,7 @@ func (r apiSendInviteLinkRequest) Execute() (models.Status, *_nethttp.Response, 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 

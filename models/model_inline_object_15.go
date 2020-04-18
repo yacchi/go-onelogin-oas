@@ -26,7 +26,7 @@ type InlineObject15 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInlineObject15(email string, ) *InlineObject15 {
+func NewInlineObject15(email string) *InlineObject15 {
 	this := InlineObject15{}
 	this.Email = email
 	return &this
@@ -42,7 +42,7 @@ func NewInlineObject15WithDefaults() *InlineObject15 {
 
 // GetEmail returns the Email field value
 func (o *InlineObject15) GetEmail() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *InlineObject15) GetEmail() string {
 // GetEmailOk returns a tuple with the Email field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject15) GetEmailOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Email, true

@@ -12,21 +12,20 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 	"time"
 )
 
 // AppInfo struct for AppInfo
 type AppInfo struct {
-	Id *int32 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Visible *bool `json:"visible,omitempty"`
-	Description *string `json:"description,omitempty"`
-	IconUrl *string `json:"icon_url,omitempty"`
-	AuthMethod *int32 `json:"auth_method,omitempty"`
-	ConnectorId *int32 `json:"connector_id,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+	Id          *int32     `json:"id,omitempty"`
+	Name        *string    `json:"name,omitempty"`
+	Visible     *bool      `json:"visible,omitempty"`
+	Description *string    `json:"description,omitempty"`
+	IconUrl     *string    `json:"icon_url,omitempty"`
+	AuthMethod  *int32     `json:"auth_method,omitempty"`
+	ConnectorId *int32     `json:"connector_id,omitempty"`
+	CreatedAt   *time.Time `json:"created_at,omitempty"`
+	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
 }
 
 // NewAppInfo instantiates a new AppInfo object

@@ -15,9 +15,10 @@ import (
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
-	"github.com/yacchi/go-onelogin-oas/models"
 	"strings"
 	"time"
+
+	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // Linger please
@@ -26,12 +27,11 @@ var (
 )
 
 type apiAddUserRolesRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
+	ctx         _context.Context
+	client      *APIClient
+	id          int32
 	requestBody *[]models.int32
 }
-
 
 func (r apiAddUserRolesRequest) RequestBody(requestBody []models.int32) apiAddUserRolesRequest {
 	r.requestBody = &requestBody
@@ -48,8 +48,8 @@ Assign one or more existing roles to a user.
 func (c *APIClient) AddUserRoles(ctx _context.Context, id int32) apiAddUserRolesRequest {
 	return apiAddUserRolesRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -73,13 +73,12 @@ func (r apiAddUserRolesRequest) Execute() (models.Status, *_nethttp.Response, er
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/add_roles"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -183,12 +182,12 @@ func (r apiAddUserRolesRequest) Execute() (models.Status, *_nethttp.Response, er
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiCall1UsersPostRequest struct {
-	ctx _context.Context
-	client *APIClient
-	user *models.User
-}
 
+type apiCall1UsersPostRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	user   *models.User
+}
 
 func (r apiCall1UsersPostRequest) User(user models.User) apiCall1UsersPostRequest {
 	r.user = &user
@@ -204,7 +203,7 @@ Creates a new user account in OneLogin
 func (c *APIClient) Call1UsersPost(ctx _context.Context) apiCall1UsersPostRequest {
 	return apiCall1UsersPostRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -232,7 +231,7 @@ func (r apiCall1UsersPostRequest) Execute() (models.CreateUserResponse, *_nethtt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -326,13 +325,13 @@ func (r apiCall1UsersPostRequest) Execute() (models.CreateUserResponse, *_nethtt
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiCreateUserTempMFATokenRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
+	ctx           _context.Context
+	client        *APIClient
+	id            int32
 	inlineObject3 *models.InlineObject3
 }
-
 
 func (r apiCreateUserTempMFATokenRequest) InlineObject3(inlineObject3 models.InlineObject3) apiCreateUserTempMFATokenRequest {
 	r.inlineObject3 = &inlineObject3
@@ -349,8 +348,8 @@ Use to generate a temporary MFA token that can be used in place of other MFA tok
 func (c *APIClient) CreateUserTempMFAToken(ctx _context.Context, id int32) apiCreateUserTempMFATokenRequest {
 	return apiCreateUserTempMFATokenRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -374,13 +373,12 @@ func (r apiCreateUserTempMFATokenRequest) Execute() (models.GenerateMfaTokenResp
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/mfa_token"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -454,12 +452,12 @@ func (r apiCreateUserTempMFATokenRequest) Execute() (models.GenerateMfaTokenResp
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiDeleteUserRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
-}
 
+type apiDeleteUserRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     int32
+}
 
 /*
 DeleteUser Delete a user account
@@ -471,8 +469,8 @@ Use this call to delete a user by ID.
 func (c *APIClient) DeleteUser(ctx _context.Context, id int32) apiDeleteUserRequest {
 	return apiDeleteUserRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -496,12 +494,11 @@ func (r apiDeleteUserRequest) Execute() (models.Status, *_nethttp.Response, erro
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -604,11 +601,11 @@ func (r apiDeleteUserRequest) Execute() (models.Status, *_nethttp.Response, erro
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiGetCustomAttributesRequest struct {
-	ctx _context.Context
+	ctx    _context.Context
 	client *APIClient
 }
-
 
 /*
 GetCustomAttributes Get Custom Attributes
@@ -619,7 +616,7 @@ Returns a list of all custom attribute fields (also known as custom user fields)
 func (c *APIClient) GetCustomAttributes(ctx _context.Context) apiGetCustomAttributesRequest {
 	return apiGetCustomAttributesRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -729,12 +726,12 @@ func (r apiGetCustomAttributesRequest) Execute() (models.CustomAttributesRespons
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiGetUserRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
-}
 
+type apiGetUserRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     int32
+}
 
 /*
 GetUser Get a User
@@ -746,8 +743,8 @@ Returns a single user
 func (c *APIClient) GetUser(ctx _context.Context, id int32) apiGetUserRequest {
 	return apiGetUserRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -771,12 +768,11 @@ func (r apiGetUserRequest) Execute() (models.CreateUserResponse, *_nethttp.Respo
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -879,12 +875,12 @@ func (r apiGetUserRequest) Execute() (models.CreateUserResponse, *_nethttp.Respo
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiGetUserAppsRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
-}
 
+type apiGetUserAppsRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     int32
+}
 
 /*
 GetUserApps Get User Apps
@@ -896,8 +892,8 @@ Get a list of apps accessible by a user, not including personal apps.
 func (c *APIClient) GetUserApps(ctx _context.Context, id int32) apiGetUserAppsRequest {
 	return apiGetUserAppsRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -921,12 +917,11 @@ func (r apiGetUserAppsRequest) Execute() (models.UserAppsResponse, *_nethttp.Res
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/apps"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1029,12 +1024,12 @@ func (r apiGetUserAppsRequest) Execute() (models.UserAppsResponse, *_nethttp.Res
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiGetUserRolesRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
-}
 
+type apiGetUserRolesRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     int32
+}
 
 /*
 GetUserRoles Get User Roles
@@ -1046,8 +1041,8 @@ Get a list of role IDs that have been assigned to a user.
 func (c *APIClient) GetUserRoles(ctx _context.Context, id int32) apiGetUserRolesRequest {
 	return apiGetUserRolesRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -1071,12 +1066,11 @@ func (r apiGetUserRolesRequest) Execute() (models.UserRolesResponse, *_nethttp.R
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/roles"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1179,23 +1173,23 @@ func (r apiGetUserRolesRequest) Execute() (models.UserRolesResponse, *_nethttp.R
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiGetUsersRequest struct {
-	ctx _context.Context
-	client *APIClient
-	directoryId *int32
-	email *string
-	externalId *string
-	firstname *string
-	id *int32
-	managerAdId *int32
-	roleId *int32
-	samaccountname *string
-	since *time.Time
-	until *time.Time
-	username *string
+	ctx               _context.Context
+	client            *APIClient
+	directoryId       *int32
+	email             *string
+	externalId        *string
+	firstname         *string
+	id                *int32
+	managerAdId       *int32
+	roleId            *int32
+	samaccountname    *string
+	since             *time.Time
+	until             *time.Time
+	username          *string
 	userprincipalname *string
 }
-
 
 func (r apiGetUsersRequest) DirectoryId(directoryId int32) apiGetUsersRequest {
 	r.directoryId = &directoryId
@@ -1266,7 +1260,7 @@ Returns a list of users. Supports filtering and paging.
 func (c *APIClient) GetUsers(ctx _context.Context) apiGetUsersRequest {
 	return apiGetUsersRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -1294,7 +1288,7 @@ func (r apiGetUsersRequest) Execute() (models.UsersResponse, *_nethttp.Response,
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-												
+
 	if r.directoryId != nil {
 		localVarQueryParams.Add("directory_id", parameterToString(*r.directoryId, ""))
 	}
@@ -1422,13 +1416,13 @@ func (r apiGetUsersRequest) Execute() (models.UsersResponse, *_nethttp.Response,
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiLockUserRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
+	ctx           _context.Context
+	client        *APIClient
+	id            int32
 	inlineObject1 *models.InlineObject1
 }
-
 
 func (r apiLockUserRequest) InlineObject1(inlineObject1 models.InlineObject1) apiLockUserRequest {
 	r.inlineObject1 = &inlineObject1
@@ -1445,8 +1439,8 @@ Use this call to lock a user’s account based on the policy assigned to the use
 func (c *APIClient) LockUser(ctx _context.Context, id int32) apiLockUserRequest {
 	return apiLockUserRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -1470,13 +1464,12 @@ func (r apiLockUserRequest) Execute() (models.Status, *_nethttp.Response, error)
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/lock_user"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -1580,12 +1573,12 @@ func (r apiLockUserRequest) Execute() (models.Status, *_nethttp.Response, error)
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiLogoutUserRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
-}
 
+type apiLogoutUserRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     int32
+}
 
 /*
 LogoutUser Log a user out of any and all sessions
@@ -1597,8 +1590,8 @@ Log a user out of any and all sessions.
 func (c *APIClient) LogoutUser(ctx _context.Context, id int32) apiLogoutUserRequest {
 	return apiLogoutUserRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -1622,12 +1615,11 @@ func (r apiLogoutUserRequest) Execute() (models.Status, *_nethttp.Response, erro
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/logout"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1730,13 +1722,13 @@ func (r apiLogoutUserRequest) Execute() (models.Status, *_nethttp.Response, erro
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiRemoveUserRolesRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
+	ctx         _context.Context
+	client      *APIClient
+	id          int32
 	requestBody *[]models.int32
 }
-
 
 func (r apiRemoveUserRolesRequest) RequestBody(requestBody []models.int32) apiRemoveUserRolesRequest {
 	r.requestBody = &requestBody
@@ -1753,8 +1745,8 @@ Remove one or more existing roles to a user.
 func (c *APIClient) RemoveUserRoles(ctx _context.Context, id int32) apiRemoveUserRolesRequest {
 	return apiRemoveUserRolesRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -1778,13 +1770,12 @@ func (r apiRemoveUserRolesRequest) Execute() (models.Status, *_nethttp.Response,
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/remove_roles"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -1888,13 +1879,13 @@ func (r apiRemoveUserRolesRequest) Execute() (models.Status, *_nethttp.Response,
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiUpdateUserRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
-	user *models.User
-}
 
+type apiUpdateUserRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     int32
+	user   *models.User
+}
 
 func (r apiUpdateUserRequest) User(user models.User) apiUpdateUserRequest {
 	r.user = &user
@@ -1911,8 +1902,8 @@ Use to update a user by ID
 func (c *APIClient) UpdateUser(ctx _context.Context, id int32) apiUpdateUserRequest {
 	return apiUpdateUserRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -1936,13 +1927,12 @@ func (r apiUpdateUserRequest) Execute() (models.CreateUserResponse, *_nethttp.Re
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -2046,13 +2036,13 @@ func (r apiUpdateUserRequest) Execute() (models.CreateUserResponse, *_nethttp.Re
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiUpdateUserCustomAttributesRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
+	ctx           _context.Context
+	client        *APIClient
+	id            int32
 	inlineObject2 *models.InlineObject2
 }
-
 
 func (r apiUpdateUserCustomAttributesRequest) InlineObject2(inlineObject2 models.InlineObject2) apiUpdateUserCustomAttributesRequest {
 	r.inlineObject2 = &inlineObject2
@@ -2069,8 +2059,8 @@ Set a custom attribute field (also known as a custom user field) value for a use
 func (c *APIClient) UpdateUserCustomAttributes(ctx _context.Context, id int32) apiUpdateUserCustomAttributesRequest {
 	return apiUpdateUserCustomAttributesRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -2094,13 +2084,12 @@ func (r apiUpdateUserCustomAttributesRequest) Execute() (models.Status, *_nethtt
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/set_custom_attributes"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -2204,13 +2193,13 @@ func (r apiUpdateUserCustomAttributesRequest) Execute() (models.Status, *_nethtt
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiUpdateUserPasswordRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
+	ctx           _context.Context
+	client        *APIClient
+	id            int32
 	inlineObject4 *models.InlineObject4
 }
-
 
 func (r apiUpdateUserPasswordRequest) InlineObject4(inlineObject4 models.InlineObject4) apiUpdateUserPasswordRequest {
 	r.inlineObject4 = &inlineObject4
@@ -2227,8 +2216,8 @@ Set a the password for a user
 func (c *APIClient) UpdateUserPassword(ctx _context.Context, id int32) apiUpdateUserPasswordRequest {
 	return apiUpdateUserPasswordRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -2252,13 +2241,12 @@ func (r apiUpdateUserPasswordRequest) Execute() (models.Status, *_nethttp.Respon
 	}
 
 	localVarPath := localBasePath + "/1/users/set_password_clear_text/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -2362,13 +2350,13 @@ func (r apiUpdateUserPasswordRequest) Execute() (models.Status, *_nethttp.Respon
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiUpdateUserPasswordSaltedRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
+	ctx           _context.Context
+	client        *APIClient
+	id            int32
 	inlineObject5 *models.InlineObject5
 }
-
 
 func (r apiUpdateUserPasswordSaltedRequest) InlineObject5(inlineObject5 models.InlineObject5) apiUpdateUserPasswordSaltedRequest {
 	r.inlineObject5 = &inlineObject5
@@ -2385,8 +2373,8 @@ Set a pre salted password for a user
 func (c *APIClient) UpdateUserPasswordSalted(ctx _context.Context, id int32) apiUpdateUserPasswordSaltedRequest {
 	return apiUpdateUserPasswordSaltedRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -2410,13 +2398,12 @@ func (r apiUpdateUserPasswordSaltedRequest) Execute() (models.Status, *_nethttp.
 	}
 
 	localVarPath := localBasePath + "/1/users/set_password_using_salt/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -2520,13 +2507,13 @@ func (r apiUpdateUserPasswordSaltedRequest) Execute() (models.Status, *_nethttp.
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiUpdateUserStateRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
+	ctx          _context.Context
+	client       *APIClient
+	id           int32
 	inlineObject *models.InlineObject
 }
-
 
 func (r apiUpdateUserStateRequest) InlineObject(inlineObject models.InlineObject) apiUpdateUserStateRequest {
 	r.inlineObject = &inlineObject
@@ -2543,8 +2530,8 @@ States describe a stage in a process (such as user account approval). User state
 func (c *APIClient) UpdateUserState(ctx _context.Context, id int32) apiUpdateUserStateRequest {
 	return apiUpdateUserStateRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -2568,13 +2555,12 @@ func (r apiUpdateUserStateRequest) Execute() (models.Status, *_nethttp.Response,
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/set_state"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 

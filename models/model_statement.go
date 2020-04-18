@@ -12,21 +12,20 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // Statement struct for Statement
 type Statement struct {
-	Effect string `json:"Effect"`
+	Effect string   `json:"Effect"`
 	Action []Action `json:"Action"`
-	Scope []string `json:"Scope"`
+	Scope  []string `json:"Scope"`
 }
 
 // NewStatement instantiates a new Statement object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStatement(effect string, action []Action, scope []string, ) *Statement {
+func NewStatement(effect string, action []Action, scope []string) *Statement {
 	this := Statement{}
 	this.Effect = effect
 	this.Action = action
@@ -44,7 +43,7 @@ func NewStatementWithDefaults() *Statement {
 
 // GetEffect returns the Effect field value
 func (o *Statement) GetEffect() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -55,7 +54,7 @@ func (o *Statement) GetEffect() string {
 // GetEffectOk returns a tuple with the Effect field value
 // and a boolean to check if the value has been set.
 func (o *Statement) GetEffectOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Effect, true
@@ -68,7 +67,7 @@ func (o *Statement) SetEffect(v string) {
 
 // GetAction returns the Action field value
 func (o *Statement) GetAction() []Action {
-	if o == nil  {
+	if o == nil {
 		var ret []Action
 		return ret
 	}
@@ -79,7 +78,7 @@ func (o *Statement) GetAction() []Action {
 // GetActionOk returns a tuple with the Action field value
 // and a boolean to check if the value has been set.
 func (o *Statement) GetActionOk() (*[]Action, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Action, true
@@ -92,7 +91,7 @@ func (o *Statement) SetAction(v []Action) {
 
 // GetScope returns the Scope field value
 func (o *Statement) GetScope() []string {
-	if o == nil  {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -103,7 +102,7 @@ func (o *Statement) GetScope() []string {
 // GetScopeOk returns a tuple with the Scope field value
 // and a boolean to check if the value has been set.
 func (o *Statement) GetScopeOk() (*[]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Scope, true

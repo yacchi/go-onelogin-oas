@@ -12,13 +12,12 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // Privilege struct for Privilege
 type Privilege struct {
-	Id string `json:"id"`
-	Name string `json:"name"`
+	Id        string             `json:"id"`
+	Name      string             `json:"name"`
 	Privilege PrivilegePrivilege `json:"privilege"`
 }
 
@@ -26,7 +25,7 @@ type Privilege struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPrivilege(id string, name string, privilege PrivilegePrivilege, ) *Privilege {
+func NewPrivilege(id string, name string, privilege PrivilegePrivilege) *Privilege {
 	this := Privilege{}
 	this.Id = id
 	this.Name = name
@@ -44,7 +43,7 @@ func NewPrivilegeWithDefaults() *Privilege {
 
 // GetId returns the Id field value
 func (o *Privilege) GetId() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -55,7 +54,7 @@ func (o *Privilege) GetId() string {
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *Privilege) GetIdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -68,7 +67,7 @@ func (o *Privilege) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *Privilege) GetName() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -79,7 +78,7 @@ func (o *Privilege) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *Privilege) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -92,7 +91,7 @@ func (o *Privilege) SetName(v string) {
 
 // GetPrivilege returns the Privilege field value
 func (o *Privilege) GetPrivilege() PrivilegePrivilege {
-	if o == nil  {
+	if o == nil {
 		var ret PrivilegePrivilege
 		return ret
 	}
@@ -103,7 +102,7 @@ func (o *Privilege) GetPrivilege() PrivilegePrivilege {
 // GetPrivilegeOk returns a tuple with the Privilege field value
 // and a boolean to check if the value has been set.
 func (o *Privilege) GetPrivilegeOk() (*PrivilegePrivilege, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Privilege, true

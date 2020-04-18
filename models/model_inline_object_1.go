@@ -24,7 +24,7 @@ type InlineObject1 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInlineObject1(lockedUntil int32, ) *InlineObject1 {
+func NewInlineObject1(lockedUntil int32) *InlineObject1 {
 	this := InlineObject1{}
 	this.LockedUntil = lockedUntil
 	return &this
@@ -40,7 +40,7 @@ func NewInlineObject1WithDefaults() *InlineObject1 {
 
 // GetLockedUntil returns the LockedUntil field value
 func (o *InlineObject1) GetLockedUntil() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *InlineObject1) GetLockedUntil() int32 {
 // GetLockedUntilOk returns a tuple with the LockedUntil field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject1) GetLockedUntilOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.LockedUntil, true

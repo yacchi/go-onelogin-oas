@@ -15,8 +15,9 @@ import (
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
-	"github.com/yacchi/go-onelogin-oas/models"
 	"strings"
+
+	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // Linger please
@@ -25,11 +26,10 @@ var (
 )
 
 type apiCreateAppRequest struct {
-	ctx _context.Context
+	ctx    _context.Context
 	client *APIClient
-	app *models.App
+	app    *models.App
 }
-
 
 func (r apiCreateAppRequest) App(app models.App) apiCreateAppRequest {
 	r.app = &app
@@ -45,7 +45,7 @@ Creates a new app in OneLogin
 func (c *APIClient) CreateApp(ctx _context.Context) apiCreateAppRequest {
 	return apiCreateAppRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -73,7 +73,7 @@ func (r apiCreateAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -177,12 +177,12 @@ func (r apiCreateAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiDeleteAppRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
-}
 
+type apiDeleteAppRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     int32
+}
 
 /*
 DeleteApp Delete an app
@@ -194,8 +194,8 @@ Use this call to delete a app by ID.
 func (c *APIClient) DeleteApp(ctx _context.Context, id int32) apiDeleteAppRequest {
 	return apiDeleteAppRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -210,7 +210,6 @@ func (r apiDeleteAppRequest) Execute() (*_nethttp.Response, error) {
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		
 	)
 
 	localBasePath, err := r.client.cfg.ServerURLWithContext(r.ctx, "AppsApiService.DeleteApp")
@@ -219,12 +218,11 @@ func (r apiDeleteAppRequest) Execute() (*_nethttp.Response, error) {
 	}
 
 	localVarPath := localBasePath + "/2/apps/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -308,13 +306,13 @@ func (r apiDeleteAppRequest) Execute() (*_nethttp.Response, error) {
 
 	return localVarHTTPResponse, nil
 }
+
 type apiDeleteAppParameterRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
+	ctx         _context.Context
+	client      *APIClient
+	id          int32
 	parameterId int32
 }
-
 
 /*
 DeleteAppParameter Delete an app parameter
@@ -326,9 +324,9 @@ Use this call to delete a app by ID.
 */
 func (c *APIClient) DeleteAppParameter(ctx _context.Context, id int32, parameterId int32) apiDeleteAppParameterRequest {
 	return apiDeleteAppParameterRequest{
-		client: c,
-		ctx: ctx,
-		id: id,
+		client:      c,
+		ctx:         ctx,
+		id:          id,
 		parameterId: parameterId,
 	}
 }
@@ -344,7 +342,6 @@ func (r apiDeleteAppParameterRequest) Execute() (*_nethttp.Response, error) {
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		
 	)
 
 	localBasePath, err := r.client.cfg.ServerURLWithContext(r.ctx, "AppsApiService.DeleteAppParameter")
@@ -353,14 +350,12 @@ func (r apiDeleteAppParameterRequest) Execute() (*_nethttp.Response, error) {
 	}
 
 	localVarPath := localBasePath + "/2/apps/{id}/parameters/{parameter_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"parameter_id"+"}", _neturl.QueryEscape(parameterToString(r.parameterId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parameter_id"+"}", _neturl.QueryEscape(parameterToString(r.parameterId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -444,12 +439,12 @@ func (r apiDeleteAppParameterRequest) Execute() (*_nethttp.Response, error) {
 
 	return localVarHTTPResponse, nil
 }
-type apiGetAppRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
-}
 
+type apiGetAppRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     int32
+}
 
 /*
 GetApp Get an App
@@ -461,8 +456,8 @@ Get an app in OneLogin
 func (c *APIClient) GetApp(ctx _context.Context, id int32) apiGetAppRequest {
 	return apiGetAppRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -486,12 +481,11 @@ func (r apiGetAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 	}
 
 	localVarPath := localBasePath + "/2/apps/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -604,14 +598,14 @@ func (r apiGetAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiGetAppsRequest struct {
-	ctx _context.Context
-	client *APIClient
-	name *string
-	authMethod *int32
+	ctx         _context.Context
+	client      *APIClient
+	name        *string
+	authMethod  *int32
 	connectorId *int32
 }
-
 
 func (r apiGetAppsRequest) Name(name string) apiGetAppsRequest {
 	r.name = &name
@@ -637,7 +631,7 @@ Returns a list of apps
 func (c *APIClient) GetApps(ctx _context.Context) apiGetAppsRequest {
 	return apiGetAppsRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -665,7 +659,7 @@ func (r apiGetAppsRequest) Execute() ([]models.AppInfo, *_nethttp.Response, erro
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-			
+
 	if r.name != nil {
 		localVarQueryParams.Add("name", parameterToString(*r.name, ""))
 	}
@@ -776,13 +770,13 @@ func (r apiGetAppsRequest) Execute() ([]models.AppInfo, *_nethttp.Response, erro
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiUpdateAppRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
-	app *models.App
-}
 
+type apiUpdateAppRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     int32
+	app    *models.App
+}
 
 func (r apiUpdateAppRequest) App(app models.App) apiUpdateAppRequest {
 	r.app = &app
@@ -799,8 +793,8 @@ Update an app in OneLogin
 func (c *APIClient) UpdateApp(ctx _context.Context, id int32) apiUpdateAppRequest {
 	return apiUpdateAppRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -824,13 +818,12 @@ func (r apiUpdateAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 	}
 
 	localVarPath := localBasePath + "/2/apps/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 

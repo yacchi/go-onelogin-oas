@@ -30,7 +30,7 @@ type InlineObject7 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInlineObject7(deviceId int32, stateToken string, ) *InlineObject7 {
+func NewInlineObject7(deviceId int32, stateToken string) *InlineObject7 {
 	this := InlineObject7{}
 	this.DeviceId = deviceId
 	this.StateToken = stateToken
@@ -51,7 +51,7 @@ func NewInlineObject7WithDefaults() *InlineObject7 {
 
 // GetDeviceId returns the DeviceId field value
 func (o *InlineObject7) GetDeviceId() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *InlineObject7) GetDeviceId() int32 {
 // GetDeviceIdOk returns a tuple with the DeviceId field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject7) GetDeviceIdOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DeviceId, true
@@ -75,7 +75,7 @@ func (o *InlineObject7) SetDeviceId(v int32) {
 
 // GetStateToken returns the StateToken field value
 func (o *InlineObject7) GetStateToken() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *InlineObject7) GetStateToken() string {
 // GetStateTokenOk returns a tuple with the StateToken field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject7) GetStateTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.StateToken, true

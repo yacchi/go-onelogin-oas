@@ -16,9 +16,9 @@ import (
 
 // Status Status object returned in the body of most responses
 type Status struct {
-	Error *bool `json:"error,omitempty"`
-	Code *int32 `json:"code,omitempty"`
-	Type *string `json:"type,omitempty"`
+	Error   *bool   `json:"error,omitempty"`
+	Code    *int32  `json:"code,omitempty"`
+	Type    *string `json:"type,omitempty"`
 	Message *string `json:"message,omitempty"`
 }
 

@@ -16,9 +16,9 @@ import (
 
 // InlineResponse400 struct for InlineResponse400
 type InlineResponse400 struct {
-	StatusCode *int32 `json:"statusCode,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Message *string `json:"message,omitempty"`
+	StatusCode *int32  `json:"statusCode,omitempty"`
+	Name       *string `json:"name,omitempty"`
+	Message    *string `json:"message,omitempty"`
 }
 
 // NewInlineResponse400 instantiates a new InlineResponse400 object

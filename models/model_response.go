@@ -12,19 +12,18 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // Response struct for Response
 type Response struct {
-	Status *string `json:"status,omitempty"`
-	User *ResponseUser `json:"user,omitempty"`
-	ReturnToUrl *string `json:"return_to_url,omitempty"`
-	ExpiresAt *string `json:"expires_at,omitempty"`
-	SessionToken *string `json:"session_token,omitempty"`
-	StateToken *string `json:"state_token,omitempty"`
-	CallbackUrl *string `json:"callback_url,omitempty"`
-	Devices *[]ResponseDevices `json:"devices,omitempty"`
+	Status       *string            `json:"status,omitempty"`
+	User         *ResponseUser      `json:"user,omitempty"`
+	ReturnToUrl  *string            `json:"return_to_url,omitempty"`
+	ExpiresAt    *string            `json:"expires_at,omitempty"`
+	SessionToken *string            `json:"session_token,omitempty"`
+	StateToken   *string            `json:"state_token,omitempty"`
+	CallbackUrl  *string            `json:"callback_url,omitempty"`
+	Devices      *[]ResponseDevices `json:"devices,omitempty"`
 }
 
 // NewResponse instantiates a new Response object

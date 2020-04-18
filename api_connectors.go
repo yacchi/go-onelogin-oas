@@ -15,6 +15,7 @@ import (
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
+
 	"github.com/yacchi/go-onelogin-oas/models"
 )
 
@@ -24,12 +25,11 @@ var (
 )
 
 type apiGetConnectorsRequest struct {
-	ctx _context.Context
-	client *APIClient
-	name *string
+	ctx        _context.Context
+	client     *APIClient
+	name       *string
 	authMethod *int32
 }
-
 
 func (r apiGetConnectorsRequest) Name(name string) apiGetConnectorsRequest {
 	r.name = &name
@@ -50,7 +50,7 @@ Returns a list of connectors
 func (c *APIClient) GetConnectors(ctx _context.Context) apiGetConnectorsRequest {
 	return apiGetConnectorsRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -78,7 +78,7 @@ func (r apiGetConnectorsRequest) Execute() ([]models.Connector, *_nethttp.Respon
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-		
+
 	if r.name != nil {
 		localVarQueryParams.Add("name", parameterToString(*r.name, ""))
 	}

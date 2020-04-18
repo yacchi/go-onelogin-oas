@@ -12,7 +12,6 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // EnrolledMfaDevicesResponseData struct for EnrolledMfaDevicesResponseData

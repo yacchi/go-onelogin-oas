@@ -15,8 +15,9 @@ import (
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
-	"github.com/yacchi/go-onelogin-oas/models"
 	"strings"
+
+	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // Linger please
@@ -25,12 +26,11 @@ var (
 )
 
 type apiActivateUserMFADeviceRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
+	ctx      _context.Context
+	client   *APIClient
+	id       int32
 	deviceId int32
 }
-
 
 /*
 ActivateUserMFADevice Activate an authentication factor
@@ -42,9 +42,9 @@ Use this API to trigger an SMS or Push notification containing a One-Time Passwo
 */
 func (c *APIClient) ActivateUserMFADevice(ctx _context.Context, id int32, deviceId int32) apiActivateUserMFADeviceRequest {
 	return apiActivateUserMFADeviceRequest{
-		client: c,
-		ctx: ctx,
-		id: id,
+		client:   c,
+		ctx:      ctx,
+		id:       id,
 		deviceId: deviceId,
 	}
 }
@@ -69,14 +69,12 @@ func (r apiActivateUserMFADeviceRequest) Execute() (models.EnrollMfaDeviceRespon
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/otp_devices/{device_id}/trigger"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"device_id"+"}", _neturl.QueryEscape(parameterToString(r.deviceId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"device_id"+"}", _neturl.QueryEscape(parameterToString(r.deviceId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -169,13 +167,13 @@ func (r apiActivateUserMFADeviceRequest) Execute() (models.EnrollMfaDeviceRespon
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiDeleteUserMFADeviceRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
+	ctx      _context.Context
+	client   *APIClient
+	id       int32
 	deviceId int32
 }
-
 
 /*
 DeleteUserMFADevice Remove an authentication device
@@ -187,25 +185,25 @@ Use this API to remove an enrolled factor from a user.
 */
 func (c *APIClient) DeleteUserMFADevice(ctx _context.Context, id int32, deviceId int32) apiDeleteUserMFADeviceRequest {
 	return apiDeleteUserMFADeviceRequest{
-		client: c,
-		ctx: ctx,
-		id: id,
+		client:   c,
+		ctx:      ctx,
+		id:       id,
 		deviceId: deviceId,
 	}
 }
 
 /*
 Execute executes the request
- @return models.map[string]interface{}
+ @return map[string]interface{}
 */
-func (r apiDeleteUserMFADeviceRequest) Execute() (models.map[string]interface{}, *_nethttp.Response, error) {
+func (r apiDeleteUserMFADeviceRequest) Execute() (map[string]interface{}, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  models.map[string]interface{}
+		localVarReturnValue  map[string]interface{}
 	)
 
 	localBasePath, err := r.client.cfg.ServerURLWithContext(r.ctx, "MfaApiService.DeleteUserMFADevice")
@@ -214,14 +212,12 @@ func (r apiDeleteUserMFADeviceRequest) Execute() (models.map[string]interface{},
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/otp_devices/{device_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"device_id"+"}", _neturl.QueryEscape(parameterToString(r.deviceId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"device_id"+"}", _neturl.QueryEscape(parameterToString(r.deviceId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -262,7 +258,7 @@ func (r apiDeleteUserMFADeviceRequest) Execute() (models.map[string]interface{},
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 200 {
-			var v models.map[string]interface{}
+			var v map[string]interface{}
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -304,13 +300,13 @@ func (r apiDeleteUserMFADeviceRequest) Execute() (models.map[string]interface{},
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiEnrollUserMFADeviceRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
+	ctx            _context.Context
+	client         *APIClient
+	id             int32
 	inlineObject10 *models.InlineObject10
 }
-
 
 func (r apiEnrollUserMFADeviceRequest) InlineObject10(inlineObject10 models.InlineObject10) apiEnrollUserMFADeviceRequest {
 	r.inlineObject10 = &inlineObject10
@@ -327,8 +323,8 @@ If the authentication factor requires confirmation to complete, then the device 
 func (c *APIClient) EnrollUserMFADevice(ctx _context.Context, id int32) apiEnrollUserMFADeviceRequest {
 	return apiEnrollUserMFADeviceRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -352,13 +348,12 @@ func (r apiEnrollUserMFADeviceRequest) Execute() (models.EnrollMfaDeviceResponse
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/otp_devices"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -452,12 +447,12 @@ func (r apiEnrollUserMFADeviceRequest) Execute() (models.EnrollMfaDeviceResponse
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiGetUserAvailableMFAFactorsRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
-}
 
+type apiGetUserAvailableMFAFactorsRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     int32
+}
 
 /*
 GetUserAvailableMFAFactors Get a list of MFA factors available to user
@@ -469,8 +464,8 @@ Use this API to return a list of authentication factors that are available for u
 func (c *APIClient) GetUserAvailableMFAFactors(ctx _context.Context, id int32) apiGetUserAvailableMFAFactorsRequest {
 	return apiGetUserAvailableMFAFactorsRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -494,12 +489,11 @@ func (r apiGetUserAvailableMFAFactorsRequest) Execute() (models.UserMfaFactorsRe
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/auth_factors"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -592,12 +586,12 @@ func (r apiGetUserAvailableMFAFactorsRequest) Execute() (models.UserMfaFactorsRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiGetUserEnrolledMFADevicesRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
-}
 
+type apiGetUserEnrolledMFADevicesRequest struct {
+	ctx    _context.Context
+	client *APIClient
+	id     int32
+}
 
 /*
 GetUserEnrolledMFADevices Get enrolled authentication devices
@@ -609,8 +603,8 @@ Use this API to return a list of authentication factors registered to a particul
 func (c *APIClient) GetUserEnrolledMFADevices(ctx _context.Context, id int32) apiGetUserEnrolledMFADevicesRequest {
 	return apiGetUserEnrolledMFADevicesRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -634,12 +628,11 @@ func (r apiGetUserEnrolledMFADevicesRequest) Execute() (models.EnrolledMfaDevice
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/otp_devices"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -732,14 +725,14 @@ func (r apiGetUserEnrolledMFADevicesRequest) Execute() (models.EnrolledMfaDevice
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiVerifyUserMFADeviceRequest struct {
-	ctx _context.Context
-	client *APIClient
-	id int32
-	deviceId int32
+	ctx            _context.Context
+	client         *APIClient
+	id             int32
+	deviceId       int32
 	inlineObject11 *models.InlineObject11
 }
-
 
 func (r apiVerifyUserMFADeviceRequest) InlineObject11(inlineObject11 models.InlineObject11) apiVerifyUserMFADeviceRequest {
 	r.inlineObject11 = &inlineObject11
@@ -756,9 +749,9 @@ Use this API to authenticate a one-time password (OTP) code provided by a multif
 */
 func (c *APIClient) VerifyUserMFADevice(ctx _context.Context, id int32, deviceId int32) apiVerifyUserMFADeviceRequest {
 	return apiVerifyUserMFADeviceRequest{
-		client: c,
-		ctx: ctx,
-		id: id,
+		client:   c,
+		ctx:      ctx,
+		id:       id,
 		deviceId: deviceId,
 	}
 }
@@ -783,15 +776,13 @@ func (r apiVerifyUserMFADeviceRequest) Execute() (models.Status, *_nethttp.Respo
 	}
 
 	localVarPath := localBasePath + "/1/users/{id}/otp_devices/{device_id}/verify"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"device_id"+"}", _neturl.QueryEscape(parameterToString(r.deviceId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"device_id"+"}", _neturl.QueryEscape(parameterToString(r.deviceId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
-	
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 

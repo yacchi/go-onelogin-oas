@@ -16,8 +16,8 @@ import (
 
 // UserMfaFactorsResponseDataAuthFactors struct for UserMfaFactorsResponseDataAuthFactors
 type UserMfaFactorsResponseDataAuthFactors struct {
-	FactorId *int32 `json:"factor_id,omitempty"`
-	Name *string `json:"name,omitempty"`
+	FactorId *int32  `json:"factor_id,omitempty"`
+	Name     *string `json:"name,omitempty"`
 }
 
 // NewUserMfaFactorsResponseDataAuthFactors instantiates a new UserMfaFactorsResponseDataAuthFactors object

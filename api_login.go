@@ -15,6 +15,7 @@ import (
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
+
 	"github.com/yacchi/go-onelogin-oas/models"
 )
 
@@ -24,12 +25,11 @@ var (
 )
 
 type apiAuthenticateUserRequest struct {
-	ctx _context.Context
-	client *APIClient
+	ctx                        _context.Context
+	client                     *APIClient
 	customAllowedOriginHeader1 *string
-	inlineObject6 *models.InlineObject6
+	inlineObject6              *models.InlineObject6
 }
-
 
 func (r apiAuthenticateUserRequest) CustomAllowedOriginHeader1(customAllowedOriginHeader1 string) apiAuthenticateUserRequest {
 	r.customAllowedOriginHeader1 = &customAllowedOriginHeader1
@@ -50,7 +50,7 @@ Use this API to generate a session login token in scenarios in which MFA may or 
 func (c *APIClient) AuthenticateUser(ctx _context.Context) apiAuthenticateUserRequest {
 	return apiAuthenticateUserRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -78,7 +78,7 @@ func (r apiAuthenticateUserRequest) Execute() (models.UserLoginResponse, *_netht
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-		
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -165,13 +165,13 @@ func (r apiAuthenticateUserRequest) Execute() (models.UserLoginResponse, *_netht
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type apiVerifyLoginMFATokenRequest struct {
-	ctx _context.Context
-	client *APIClient
-	customAllowedOriginHeader1 *string
-	inlineObject7 *models.InlineObject7
-}
 
+type apiVerifyLoginMFATokenRequest struct {
+	ctx                        _context.Context
+	client                     *APIClient
+	customAllowedOriginHeader1 *string
+	inlineObject7              *models.InlineObject7
+}
 
 func (r apiVerifyLoginMFATokenRequest) CustomAllowedOriginHeader1(customAllowedOriginHeader1 string) apiVerifyLoginMFATokenRequest {
 	r.customAllowedOriginHeader1 = &customAllowedOriginHeader1
@@ -192,7 +192,7 @@ Verify a one-time password (OTP) value, provided for a second factor, when multi
 func (c *APIClient) VerifyLoginMFAToken(ctx _context.Context) apiVerifyLoginMFATokenRequest {
 	return apiVerifyLoginMFATokenRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -220,7 +220,7 @@ func (r apiVerifyLoginMFATokenRequest) Execute() (models.LoginVerifyMfaResponse,
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-		
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 

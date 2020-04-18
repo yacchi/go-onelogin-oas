@@ -12,13 +12,12 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // PrivilegePrivilege struct for PrivilegePrivilege
 type PrivilegePrivilege struct {
 	// Version can be anything. Recommended to be Date/Time format
-	Version string `json:"Version"`
+	Version   string      `json:"Version"`
 	Statement []Statement `json:"Statement"`
 }
 
@@ -26,7 +25,7 @@ type PrivilegePrivilege struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPrivilegePrivilege(version string, statement []Statement, ) *PrivilegePrivilege {
+func NewPrivilegePrivilege(version string, statement []Statement) *PrivilegePrivilege {
 	this := PrivilegePrivilege{}
 	this.Version = version
 	this.Statement = statement
@@ -43,7 +42,7 @@ func NewPrivilegePrivilegeWithDefaults() *PrivilegePrivilege {
 
 // GetVersion returns the Version field value
 func (o *PrivilegePrivilege) GetVersion() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -54,7 +53,7 @@ func (o *PrivilegePrivilege) GetVersion() string {
 // GetVersionOk returns a tuple with the Version field value
 // and a boolean to check if the value has been set.
 func (o *PrivilegePrivilege) GetVersionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Version, true
@@ -67,7 +66,7 @@ func (o *PrivilegePrivilege) SetVersion(v string) {
 
 // GetStatement returns the Statement field value
 func (o *PrivilegePrivilege) GetStatement() []Statement {
-	if o == nil  {
+	if o == nil {
 		var ret []Statement
 		return ret
 	}
@@ -78,7 +77,7 @@ func (o *PrivilegePrivilege) GetStatement() []Statement {
 // GetStatementOk returns a tuple with the Statement field value
 // and a boolean to check if the value has been set.
 func (o *PrivilegePrivilege) GetStatementOk() (*[]Statement, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Statement, true

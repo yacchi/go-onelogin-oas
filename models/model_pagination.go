@@ -17,9 +17,9 @@ import (
 // Pagination Contains useful links for paging through result sets
 type Pagination struct {
 	BeforeCursor *string `json:"before_cursor,omitempty"`
-	AfterCursor *string `json:"after_cursor,omitempty"`
+	AfterCursor  *string `json:"after_cursor,omitempty"`
 	PreviousLink *string `json:"previous_link,omitempty"`
-	NextLink *string `json:"next_link,omitempty"`
+	NextLink     *string `json:"next_link,omitempty"`
 }
 
 // NewPagination instantiates a new Pagination object

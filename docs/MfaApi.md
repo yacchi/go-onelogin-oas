@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ## DeleteUserMFADevice
 
-> models.map[string]interface{} DeleteUserMFADevice(ctx, id, deviceId).Execute()
+> map[string]interface{} DeleteUserMFADevice(ctx, id, deviceId).Execute()
 
 Remove an authentication device
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**models.map[string]interface{}**
+**map[string]interface{}**
 
 ### Authorization
 

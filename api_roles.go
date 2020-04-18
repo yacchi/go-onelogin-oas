@@ -15,8 +15,9 @@ import (
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
-	"github.com/yacchi/go-onelogin-oas/models"
 	"strings"
+
+	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // Linger please
@@ -25,11 +26,10 @@ var (
 )
 
 type apiGetRoleRequest struct {
-	ctx _context.Context
+	ctx    _context.Context
 	client *APIClient
-	id int32
+	id     int32
 }
-
 
 /*
 GetRole Get Role by ID
@@ -41,8 +41,8 @@ Use this call to get a role by ID.
 func (c *APIClient) GetRole(ctx _context.Context, id int32) apiGetRoleRequest {
 	return apiGetRoleRequest{
 		client: c,
-		ctx: ctx,
-		id: id,
+		ctx:    ctx,
+		id:     id,
 	}
 }
 
@@ -66,12 +66,11 @@ func (r apiGetRoleRequest) Execute() (models.RoleReponse, *_nethttp.Response, er
 	}
 
 	localVarPath := localBasePath + "/1/roles/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", _neturl.QueryEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -174,16 +173,16 @@ func (r apiGetRoleRequest) Execute() (models.RoleReponse, *_nethttp.Response, er
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiGetRolesRequest struct {
-	ctx _context.Context
+	ctx    _context.Context
 	client *APIClient
-	id *string
-	name *string
-	limit *int32
-	sort *string
+	id     *string
+	name   *string
+	limit  *int32
+	sort   *string
 	fields *string
 }
-
 
 func (r apiGetRolesRequest) Id(id string) apiGetRolesRequest {
 	r.id = &id
@@ -219,7 +218,7 @@ Returns a list of roles. Supports filtering and paging.
 func (c *APIClient) GetRoles(ctx _context.Context) apiGetRolesRequest {
 	return apiGetRolesRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -247,7 +246,7 @@ func (r apiGetRolesRequest) Execute() (models.RolesResponse, *_nethttp.Response,
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-					
+
 	if r.id != nil {
 		localVarQueryParams.Add("id", parameterToString(*r.id, ""))
 	}

@@ -24,7 +24,7 @@ type InlineObject2 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInlineObject2(customAttributes map[string]string, ) *InlineObject2 {
+func NewInlineObject2(customAttributes map[string]string) *InlineObject2 {
 	this := InlineObject2{}
 	this.CustomAttributes = customAttributes
 	return &this
@@ -40,7 +40,7 @@ func NewInlineObject2WithDefaults() *InlineObject2 {
 
 // GetCustomAttributes returns the CustomAttributes field value
 func (o *InlineObject2) GetCustomAttributes() map[string]string {
-	if o == nil  {
+	if o == nil {
 		var ret map[string]string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *InlineObject2) GetCustomAttributes() map[string]string {
 // GetCustomAttributesOk returns a tuple with the CustomAttributes field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject2) GetCustomAttributesOk() (*map[string]string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.CustomAttributes, true

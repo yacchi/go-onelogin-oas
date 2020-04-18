@@ -20,15 +20,15 @@ type UserApp struct {
 	Id *int32 `json:"id,omitempty"`
 	// Constant name for the Event Type
 	Name *string `json:"name,omitempty"`
-	// Template for the Event description 
+	// Template for the Event description
 	Icon *string `json:"icon,omitempty"`
 	// Indicates whether a username and password has been stored on the login for the app and user. Valid values are: - 0 (no) - 1 (yes)
 	Provisioned *int32 `json:"provisioned,omitempty"`
 	// Indicates whether the app requires the OneLogin browser extension to login. Valid values are: - true: The app requires the OneLogin browser extension. - false: The app does not require the OneLogin browser extension.
 	Extension *bool `json:"extension,omitempty"`
-	// Template for the Event description 
+	// Template for the Event description
 	LoginId *string `json:"login_id,omitempty"`
-	// Indicates whether the app is a user’s personal app. Valid values are: - true: The app is a user’s personal app. - false: The app is not a user’s personal app.        
+	// Indicates whether the app is a user’s personal app. Valid values are: - true: The app is a user’s personal app. - false: The app is not a user’s personal app.
 	Personal *bool `json:"personal,omitempty"`
 }
 

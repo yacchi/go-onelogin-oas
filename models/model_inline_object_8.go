@@ -32,7 +32,7 @@ type InlineObject8 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInlineObject8(usernameOrEmail string, password string, subdomain string, appId int32, ) *InlineObject8 {
+func NewInlineObject8(usernameOrEmail string, password string, subdomain string, appId int32) *InlineObject8 {
 	this := InlineObject8{}
 	this.UsernameOrEmail = usernameOrEmail
 	this.Password = password
@@ -51,7 +51,7 @@ func NewInlineObject8WithDefaults() *InlineObject8 {
 
 // GetUsernameOrEmail returns the UsernameOrEmail field value
 func (o *InlineObject8) GetUsernameOrEmail() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *InlineObject8) GetUsernameOrEmail() string {
 // GetUsernameOrEmailOk returns a tuple with the UsernameOrEmail field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject8) GetUsernameOrEmailOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.UsernameOrEmail, true
@@ -75,7 +75,7 @@ func (o *InlineObject8) SetUsernameOrEmail(v string) {
 
 // GetPassword returns the Password field value
 func (o *InlineObject8) GetPassword() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *InlineObject8) GetPassword() string {
 // GetPasswordOk returns a tuple with the Password field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject8) GetPasswordOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Password, true
@@ -99,7 +99,7 @@ func (o *InlineObject8) SetPassword(v string) {
 
 // GetSubdomain returns the Subdomain field value
 func (o *InlineObject8) GetSubdomain() string {
-	if o == nil  {
+	if o == nil {
 		var ret string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *InlineObject8) GetSubdomain() string {
 // GetSubdomainOk returns a tuple with the Subdomain field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject8) GetSubdomainOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Subdomain, true
@@ -123,7 +123,7 @@ func (o *InlineObject8) SetSubdomain(v string) {
 
 // GetAppId returns the AppId field value
 func (o *InlineObject8) GetAppId() int32 {
-	if o == nil  {
+	if o == nil {
 		var ret int32
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *InlineObject8) GetAppId() int32 {
 // GetAppIdOk returns a tuple with the AppId field value
 // and a boolean to check if the value has been set.
 func (o *InlineObject8) GetAppIdOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AppId, true

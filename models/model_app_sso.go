@@ -12,18 +12,17 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // AppSso struct for AppSso
 type AppSso struct {
-	ClientId *string `json:"client_id,omitempty"`
-	ClientSecret *string `json:"client_secret,omitempty"`
-	MetadataUrl *string `json:"metadata_url,omitempty"`
-	AcsUrl *string `json:"acs_url,omitempty"`
-	SlsUrl *string `json:"sls_url,omitempty"`
-	Issuer *string `json:"issuer,omitempty"`
-	Certificate *AppSsoCertificate `json:"certificate,omitempty"`
+	ClientId     *string            `json:"client_id,omitempty"`
+	ClientSecret *string            `json:"client_secret,omitempty"`
+	MetadataUrl  *string            `json:"metadata_url,omitempty"`
+	AcsUrl       *string            `json:"acs_url,omitempty"`
+	SlsUrl       *string            `json:"sls_url,omitempty"`
+	Issuer       *string            `json:"issuer,omitempty"`
+	Certificate  *AppSsoCertificate `json:"certificate,omitempty"`
 }
 
 // NewAppSso instantiates a new AppSso object

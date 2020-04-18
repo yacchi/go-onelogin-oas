@@ -15,6 +15,7 @@ import (
 	_ioutil "io/ioutil"
 	_nethttp "net/http"
 	_neturl "net/url"
+
 	"github.com/yacchi/go-onelogin-oas/models"
 )
 
@@ -24,11 +25,10 @@ var (
 )
 
 type apiCreateSAMLAssertionRequest struct {
-	ctx _context.Context
-	client *APIClient
+	ctx           _context.Context
+	client        *APIClient
 	inlineObject8 *models.InlineObject8
 }
-
 
 func (r apiCreateSAMLAssertionRequest) InlineObject8(inlineObject8 models.InlineObject8) apiCreateSAMLAssertionRequest {
 	r.inlineObject8 = &inlineObject8
@@ -44,7 +44,7 @@ Use this API to generate a SAML assertion.
 func (c *APIClient) CreateSAMLAssertion(ctx _context.Context) apiCreateSAMLAssertionRequest {
 	return apiCreateSAMLAssertionRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -72,7 +72,7 @@ func (r apiCreateSAMLAssertionRequest) Execute() (models.SamlAssertionResponse, 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -156,12 +156,12 @@ func (r apiCreateSAMLAssertionRequest) Execute() (models.SamlAssertionResponse, 
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type apiVerifySAMLAssertionMFATokenRequest struct {
-	ctx _context.Context
-	client *APIClient
+	ctx           _context.Context
+	client        *APIClient
 	inlineObject9 *models.InlineObject9
 }
-
 
 func (r apiVerifySAMLAssertionMFATokenRequest) InlineObject9(inlineObject9 models.InlineObject9) apiVerifySAMLAssertionMFATokenRequest {
 	r.inlineObject9 = &inlineObject9
@@ -177,7 +177,7 @@ Verify a one-time password (OTP) value, provided for a second factor, when multi
 func (c *APIClient) VerifySAMLAssertionMFAToken(ctx _context.Context) apiVerifySAMLAssertionMFATokenRequest {
 	return apiVerifySAMLAssertionMFATokenRequest{
 		client: c,
-		ctx: ctx,
+		ctx:    ctx,
 	}
 }
 
@@ -205,7 +205,7 @@ func (r apiVerifySAMLAssertionMFATokenRequest) Execute() (models.SamlAssertionRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
-	
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 

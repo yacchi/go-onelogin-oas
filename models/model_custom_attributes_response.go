@@ -12,13 +12,12 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // CustomAttributesResponse struct for CustomAttributesResponse
 type CustomAttributesResponse struct {
-	Status *Status `json:"status,omitempty"`
-	Data *[]string `json:"data,omitempty"`
+	Status *Status   `json:"status,omitempty"`
+	Data   *[]string `json:"data,omitempty"`
 }
 
 // NewCustomAttributesResponse instantiates a new CustomAttributesResponse object

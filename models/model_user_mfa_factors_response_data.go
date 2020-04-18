@@ -12,7 +12,6 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // UserMfaFactorsResponseData struct for UserMfaFactorsResponseData

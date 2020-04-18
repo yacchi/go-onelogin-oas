@@ -12,13 +12,12 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 )
 
 // UserMfaFactorsResponse struct for UserMfaFactorsResponse
 type UserMfaFactorsResponse struct {
-	Status *Status `json:"status,omitempty"`
-	Data *UserMfaFactorsResponseData `json:"data,omitempty"`
+	Status *Status                     `json:"status,omitempty"`
+	Data   *UserMfaFactorsResponseData `json:"data,omitempty"`
 }
 
 // NewUserMfaFactorsResponse instantiates a new UserMfaFactorsResponse object

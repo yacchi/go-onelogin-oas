@@ -12,29 +12,28 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yacchi/go-onelogin-oas/models"
 	"time"
 )
 
 // App struct for App
 type App struct {
-	Id *int32 `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Visible *bool `json:"visible,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Notes *string `json:"notes,omitempty"`
-	IconUrl *string `json:"icon_url,omitempty"`
-	AuthMethod *int32 `json:"auth_method,omitempty"`
-	PolicyId *int32 `json:"policy_id,omitempty"`
-	AllowAssumedSignin *bool `json:"allow_assumed_signin,omitempty"`
-	TabId *int32 `json:"tab_id,omitempty"`
-	ConnectorId *int32 `json:"connector_id,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
-	Provisioning *AppProvisioning `json:"provisioning,omitempty"`
-	Sso *AppSso `json:"sso,omitempty"`
-	Configuration *AppConfiguration `json:"configuration,omitempty"`
-	Parameters *map[string]AppParameters `json:"parameters,omitempty"`
+	Id                 *int32                    `json:"id,omitempty"`
+	Name               *string                   `json:"name,omitempty"`
+	Visible            *bool                     `json:"visible,omitempty"`
+	Description        *string                   `json:"description,omitempty"`
+	Notes              *string                   `json:"notes,omitempty"`
+	IconUrl            *string                   `json:"icon_url,omitempty"`
+	AuthMethod         *int32                    `json:"auth_method,omitempty"`
+	PolicyId           *int32                    `json:"policy_id,omitempty"`
+	AllowAssumedSignin *bool                     `json:"allow_assumed_signin,omitempty"`
+	TabId              *int32                    `json:"tab_id,omitempty"`
+	ConnectorId        *int32                    `json:"connector_id,omitempty"`
+	CreatedAt          *time.Time                `json:"created_at,omitempty"`
+	UpdatedAt          *time.Time                `json:"updated_at,omitempty"`
+	Provisioning       *AppProvisioning          `json:"provisioning,omitempty"`
+	Sso                *AppSso                   `json:"sso,omitempty"`
+	Configuration      *AppConfiguration         `json:"configuration,omitempty"`
+	Parameters         *map[string]AppParameters `json:"parameters,omitempty"`
 }
 
 // NewApp instantiates a new App object
