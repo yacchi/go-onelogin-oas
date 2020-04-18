@@ -1,6 +1,6 @@
 # \ConnectorsApi
 
-All URIs are relative to *https://api.us.onelogin.com/api/1*
+All URIs are relative to *https://api.us.onelogin.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
