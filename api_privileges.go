@@ -133,7 +133,7 @@ func (r apiAddPrivilegeRolesRequest) Execute() (models.AssignPrivilegeRolesRespo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -143,7 +143,7 @@ func (r apiAddPrivilegeRolesRequest) Execute() (models.AssignPrivilegeRolesRespo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -274,7 +274,7 @@ func (r apiAddPrivilegeUsersRequest) Execute() (models.AssignPrivilegeRolesRespo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -284,7 +284,7 @@ func (r apiAddPrivilegeUsersRequest) Execute() (models.AssignPrivilegeRolesRespo
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -407,7 +407,7 @@ func (r apiCreatePrivilegeRequest) Execute() (models.CreatePrivilegeResponse, *_
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -417,7 +417,7 @@ func (r apiCreatePrivilegeRequest) Execute() (models.CreatePrivilegeResponse, *_
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -427,7 +427,7 @@ func (r apiCreatePrivilegeRequest) Execute() (models.CreatePrivilegeResponse, *_
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -536,7 +536,7 @@ func (r apiDeletePrivilegeRequest) Execute() (*_nethttp.Response, error) {
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -546,7 +546,7 @@ func (r apiDeletePrivilegeRequest) Execute() (*_nethttp.Response, error) {
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -645,7 +645,7 @@ func (r apiGetPrivilegeRequest) Execute() (*_nethttp.Response, error) {
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -655,7 +655,7 @@ func (r apiGetPrivilegeRequest) Execute() (*_nethttp.Response, error) {
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -765,7 +765,7 @@ func (r apiGetPrivilegeRolesRequest) Execute() (models.PrivilegeRolesResponse, *
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -775,7 +775,7 @@ func (r apiGetPrivilegeRolesRequest) Execute() (models.PrivilegeRolesResponse, *
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -894,7 +894,7 @@ func (r apiGetPrivilegeUsersRequest) Execute() (models.PrivilegeUsersResponse, *
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -904,7 +904,7 @@ func (r apiGetPrivilegeUsersRequest) Execute() (models.PrivilegeUsersResponse, *
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1019,7 +1019,7 @@ func (r apiGetPrivilegesRequest) Execute() ([]models.Privilege, *_nethttp.Respon
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1131,7 +1131,7 @@ func (r apiRemovePrivilegeRoleRequest) Execute() (*_nethttp.Response, error) {
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1141,7 +1141,7 @@ func (r apiRemovePrivilegeRoleRequest) Execute() (*_nethttp.Response, error) {
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1244,7 +1244,7 @@ func (r apiRemovePrivlegeUserRequest) Execute() (*_nethttp.Response, error) {
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1254,7 +1254,7 @@ func (r apiRemovePrivlegeUserRequest) Execute() (*_nethttp.Response, error) {
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1372,7 +1372,7 @@ func (r apiUpdatePrivilegeRequest) Execute() (models.CreatePrivilegeResponse, *_
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1382,7 +1382,7 @@ func (r apiUpdatePrivilegeRequest) Execute() (models.CreatePrivilegeResponse, *_
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1392,7 +1392,7 @@ func (r apiUpdatePrivilegeRequest) Execute() (models.CreatePrivilegeResponse, *_
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

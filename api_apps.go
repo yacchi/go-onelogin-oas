@@ -125,7 +125,7 @@ func (r apiCreateAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -135,7 +135,7 @@ func (r apiCreateAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -145,7 +145,7 @@ func (r apiCreateAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -155,7 +155,7 @@ func (r apiCreateAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -536,7 +536,7 @@ func (r apiGetAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -546,7 +546,7 @@ func (r apiGetAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -556,7 +556,7 @@ func (r apiGetAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -566,7 +566,7 @@ func (r apiGetAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -576,7 +576,7 @@ func (r apiGetAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -718,7 +718,7 @@ func (r apiGetAppsRequest) Execute() ([]models.AppInfo, *_nethttp.Response, erro
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -728,7 +728,7 @@ func (r apiGetAppsRequest) Execute() ([]models.AppInfo, *_nethttp.Response, erro
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -738,7 +738,7 @@ func (r apiGetAppsRequest) Execute() ([]models.AppInfo, *_nethttp.Response, erro
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -748,7 +748,7 @@ func (r apiGetAppsRequest) Execute() ([]models.AppInfo, *_nethttp.Response, erro
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -875,7 +875,7 @@ func (r apiUpdateAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -885,7 +885,7 @@ func (r apiUpdateAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -895,7 +895,7 @@ func (r apiUpdateAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -905,7 +905,7 @@ func (r apiUpdateAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -915,7 +915,7 @@ func (r apiUpdateAppRequest) Execute() (models.App, *_nethttp.Response, error) {
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 422 {
-			var v InlineResponse400
+			var v models.InlineResponse400
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

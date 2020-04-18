@@ -11,7 +11,7 @@ GENERATE_TMP_DIR = tmp
 FILE_LIST = file_list
 
 PACKAGE_NAME = github.com/yacchi/go-onelogin-oas
-PACKAGE_VERSION = 0.1.3
+PACKAGE_VERSION = 0.1.4
 
 .PHONY: all
 all: $(SPEC_FILE) generate

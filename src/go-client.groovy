@@ -122,6 +122,9 @@ class MyGoClientCodegen extends GoClientExperimentalCodegen {
             }
             for (def res : operation.responses) {
                 if (res.dataType && res.baseType) {
+                    if (res.simpleType) {
+                        res.baseType = toModelName(res.baseType)
+                    }
                     res.dataType = addPackageNamePrefix(this.modelPackage, res.dataType, res.baseType)
                 }
             }
