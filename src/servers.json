@@ -1,0 +1,17 @@
+{
+  "servers": [
+    {
+      "url": "https://api.{region}.onelogin.com/api/1",
+      "variables": {
+        "region": {
+          "enum": [
+            "us",
+            "eu"
+          ],
+          "default": "us",
+          "description": "The location of the OneLogin instance"
+        }
+      }
+    }
+  ]
+}

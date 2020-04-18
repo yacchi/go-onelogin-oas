@@ -63,7 +63,7 @@ ctx = context.WithValue(context.Background(), onelogin.ContextOperationServerVar
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://virtserver.swaggerhub.com/OneLogin-Auth/onelogin-api/1.0.0*
+All URIs are relative to *https://api.us.onelogin.com/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
