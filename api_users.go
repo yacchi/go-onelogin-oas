@@ -30,10 +30,10 @@ type apiAddUserRolesRequest struct {
 	ctx         _context.Context
 	client      *APIClient
 	id          int32
-	requestBody *[]models.int32
+	requestBody *[]int32
 }
 
-func (r apiAddUserRolesRequest) RequestBody(requestBody []models.int32) apiAddUserRolesRequest {
+func (r apiAddUserRolesRequest) RequestBody(requestBody []int32) apiAddUserRolesRequest {
 	r.requestBody = &requestBody
 	return r
 }
@@ -1727,10 +1727,10 @@ type apiRemoveUserRolesRequest struct {
 	ctx         _context.Context
 	client      *APIClient
 	id          int32
-	requestBody *[]models.int32
+	requestBody *[]int32
 }
 
-func (r apiRemoveUserRolesRequest) RequestBody(requestBody []models.int32) apiRemoveUserRolesRequest {
+func (r apiRemoveUserRolesRequest) RequestBody(requestBody []int32) apiRemoveUserRolesRequest {
 	r.requestBody = &requestBody
 	return r
 }

@@ -94,7 +94,10 @@ class MyGoClientCodegen extends GoClientExperimentalCodegen {
         return "" == this.modelImportPath ? this.apiPackage : this.modelImportPath
     }
 
-    static String addPackageNamePrefix(String packageName, String name, String baseType) {
+    String addPackageNamePrefix(String packageName, String name, String baseType) {
+        if (this.languageSpecificPrimitives.contains(baseType)) {
+            return name
+        }
         return name.replace(baseType, packageName + "." + baseType)
     }
 
@@ -112,17 +115,17 @@ class MyGoClientCodegen extends GoClientExperimentalCodegen {
         for (def operation : operations) {
             if (operation.allParams) {
                 for (def param : operation.allParams) {
-                    if (!param.isPrimitiveType && param.baseType != null) {
+                    if (param.dataType && param.baseType) {
                         param.dataType = addPackageNamePrefix(this.modelPackage, param.dataType, param.baseType)
                     }
                 }
             }
             for (def res : operation.responses) {
-                if (res.dataType && !res.primitiveType) {
+                if (res.dataType && res.baseType) {
                     res.dataType = addPackageNamePrefix(this.modelPackage, res.dataType, res.baseType)
                 }
             }
-            if (operation.returnType && !operation.returnTypeIsPrimitive) {
+            if (operation.returnType && operation.returnBaseType) {
                 operation.returnType = addPackageNamePrefix(this.modelPackage, operation.returnType, operation.returnBaseType)
             }
         }

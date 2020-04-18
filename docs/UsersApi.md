@@ -48,7 +48,7 @@ Other parameters are passed through a pointer to a apiAddUserRolesRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **requestBody** | [**[]models.int32**](int32.md) | The roles to assign | 
+ **requestBody** | [**[]int32**](int32.md) | The roles to assign | 
 
 ### Return type
 
@@ -519,7 +519,7 @@ Other parameters are passed through a pointer to a apiRemoveUserRolesRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **requestBody** | [**[]models.int32**](int32.md) | The roles to remove | 
+ **requestBody** | [**[]int32**](int32.md) | The roles to remove | 
 
 ### Return type
 
