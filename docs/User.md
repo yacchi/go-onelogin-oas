@@ -31,14 +31,14 @@ Name | Type | Description | Notes
 **Samaccountname** | Pointer to **string** | Synchronized from Active Directory | [optional] 
 **Userprincipalname** | Pointer to **string** | Synchronized from Active Directory | [optional] 
 **ManagerAdId** | Pointer to **string** | ID of the user’s manager in Active Directory | [optional] 
-**RoleId** | Pointer to **[]int32** | Role IDs to which the user is assigned | [optional] 
-**CustomAttributes** | Pointer to **map[string]string** | Provides a list of custom attribute fields (also known as custom user fields) that are available for your account. The values returned correspond to the values you provided in the Shortname field when you defined the custom user field | [optional] 
+**RoleId** | Pointer to **[]int32** | Role IDs to which the user is assigned | 
+**CustomAttributes** | Pointer to **map[string]string** | Provides a list of custom attribute fields (also known as custom user fields) that are available for your account. The values returned correspond to the values you provided in the Shortname field when you defined the custom user field | 
 
 ## Methods
 
 ### NewUser
 
-`func NewUser(id int32, email string, username string, firstname string, lastname string, ) *User`
+`func NewUser(id int32, email string, username string, firstname string, lastname string, roleId []int32, customAttributes map[string]string, ) *User`
 
 NewUser instantiates a new User object
 This constructor will assign default values to properties that have it defined,
@@ -722,11 +722,6 @@ and a boolean to check if the value has been set.
 
 SetRoleId sets RoleId field to given value.
 
-### HasRoleId
-
-`func (o *User) HasRoleId() bool`
-
-HasRoleId returns a boolean if a field has been set.
 
 ### GetCustomAttributes
 
@@ -747,11 +742,6 @@ and a boolean to check if the value has been set.
 
 SetCustomAttributes sets CustomAttributes field to given value.
 
-### HasCustomAttributes
-
-`func (o *User) HasCustomAttributes() bool`
-
-HasCustomAttributes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

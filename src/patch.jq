@@ -10,6 +10,6 @@ add
 | .paths["/1/roles"].get.responses["200"].content["application/json"].schema.required = ["data"]
 | .paths["/1/roles/{id}"].get.responses["200"].content["application/json"].schema.required = ["data"]
 | .paths["/1/groups/{id}"].get.responses["200"].content["application/json"].schema.required = ["data"]
-| .components.schemas.User.required |= .+ ["id"]
+| .components.schemas.User.required |= .+ ["id", "role_id", "custom_attributes"]
 | .components.schemas.Role.required |= .+ ["id", "name"]
 | .components.schemas.Group.required |= .+ ["id", "name"]

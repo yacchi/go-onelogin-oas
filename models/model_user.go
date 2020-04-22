@@ -71,22 +71,24 @@ type User struct {
 	// ID of the user’s manager in Active Directory
 	ManagerAdId *string `json:"manager_ad_id,omitempty"`
 	// Role IDs to which the user is assigned
-	RoleId *[]int32 `json:"role_id,omitempty"`
+	RoleId []int32 `json:"role_id"`
 	// Provides a list of custom attribute fields (also known as custom user fields) that are available for your account. The values returned correspond to the values you provided in the Shortname field when you defined the custom user field
-	CustomAttributes *map[string]string `json:"custom_attributes,omitempty"`
+	CustomAttributes map[string]string `json:"custom_attributes"`
 }
 
 // NewUser instantiates a new User object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUser(id int32, email string, username string, firstname string, lastname string) *User {
+func NewUser(id int32, email string, username string, firstname string, lastname string, roleId []int32, customAttributes map[string]string) *User {
 	this := User{}
 	this.Id = id
 	this.Email = email
 	this.Username = username
 	this.Firstname = firstname
 	this.Lastname = lastname
+	this.RoleId = roleId
+	this.CustomAttributes = customAttributes
 	return &this
 }
 
@@ -922,68 +924,52 @@ func (o *User) SetManagerAdId(v string) {
 	o.ManagerAdId = &v
 }
 
-// GetRoleId returns the RoleId field value if set, zero value otherwise.
+// GetRoleId returns the RoleId field value
 func (o *User) GetRoleId() []int32 {
-	if o == nil || o.RoleId == nil {
+	if o == nil {
 		var ret []int32
 		return ret
 	}
-	return *o.RoleId
+
+	return o.RoleId
 }
 
-// GetRoleIdOk returns a tuple with the RoleId field value if set, nil otherwise
+// GetRoleIdOk returns a tuple with the RoleId field value
 // and a boolean to check if the value has been set.
 func (o *User) GetRoleIdOk() (*[]int32, bool) {
-	if o == nil || o.RoleId == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.RoleId, true
+	return &o.RoleId, true
 }
 
-// HasRoleId returns a boolean if a field has been set.
-func (o *User) HasRoleId() bool {
-	if o != nil && o.RoleId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetRoleId gets a reference to the given []int32 and assigns it to the RoleId field.
+// SetRoleId sets field value
 func (o *User) SetRoleId(v []int32) {
-	o.RoleId = &v
+	o.RoleId = v
 }
 
-// GetCustomAttributes returns the CustomAttributes field value if set, zero value otherwise.
+// GetCustomAttributes returns the CustomAttributes field value
 func (o *User) GetCustomAttributes() map[string]string {
-	if o == nil || o.CustomAttributes == nil {
+	if o == nil {
 		var ret map[string]string
 		return ret
 	}
-	return *o.CustomAttributes
+
+	return o.CustomAttributes
 }
 
-// GetCustomAttributesOk returns a tuple with the CustomAttributes field value if set, nil otherwise
+// GetCustomAttributesOk returns a tuple with the CustomAttributes field value
 // and a boolean to check if the value has been set.
 func (o *User) GetCustomAttributesOk() (*map[string]string, bool) {
-	if o == nil || o.CustomAttributes == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.CustomAttributes, true
+	return &o.CustomAttributes, true
 }
 
-// HasCustomAttributes returns a boolean if a field has been set.
-func (o *User) HasCustomAttributes() bool {
-	if o != nil && o.CustomAttributes != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCustomAttributes gets a reference to the given map[string]string and assigns it to the CustomAttributes field.
+// SetCustomAttributes sets field value
 func (o *User) SetCustomAttributes(v map[string]string) {
-	o.CustomAttributes = &v
+	o.CustomAttributes = v
 }
 
 func (o User) MarshalJSON() ([]byte, error) {
@@ -1069,10 +1055,10 @@ func (o User) MarshalJSON() ([]byte, error) {
 	if o.ManagerAdId != nil {
 		toSerialize["manager_ad_id"] = o.ManagerAdId
 	}
-	if o.RoleId != nil {
+	if true {
 		toSerialize["role_id"] = o.RoleId
 	}
-	if o.CustomAttributes != nil {
+	if true {
 		toSerialize["custom_attributes"] = o.CustomAttributes
 	}
 	return json.Marshal(toSerialize)
