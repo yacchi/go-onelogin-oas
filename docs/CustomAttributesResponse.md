@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Status** | Pointer to [**Status**](Status.md) |  | [optional] 
-**Data** | Pointer to **[]string** |  | [optional] 
+**Data** | Pointer to [**[][]string**](array.md) |  | 
 
 ## Methods
 
 ### NewCustomAttributesResponse
 
-`func NewCustomAttributesResponse() *CustomAttributesResponse`
+`func NewCustomAttributesResponse(data [][]string, ) *CustomAttributesResponse`
 
 NewCustomAttributesResponse instantiates a new CustomAttributesResponse object
 This constructor will assign default values to properties that have it defined,
@@ -53,28 +53,23 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *CustomAttributesResponse) GetData() []string`
+`func (o *CustomAttributesResponse) GetData() [][]string`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CustomAttributesResponse) GetDataOk() (*[]string, bool)`
+`func (o *CustomAttributesResponse) GetDataOk() (*[][]string, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CustomAttributesResponse) SetData(v []string)`
+`func (o *CustomAttributesResponse) SetData(v [][]string)`
 
 SetData sets Data field to given value.
 
-### HasData
-
-`func (o *CustomAttributesResponse) HasData() bool`
-
-HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

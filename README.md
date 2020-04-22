@@ -146,6 +146,7 @@ Method | HTTP request | Description
  - [EventType](docs/EventType.md)
  - [EventTypesResponse](docs/EventTypesResponse.md)
  - [EventsResponse](docs/EventsResponse.md)
+ - [GenerateInviteLinkResponse](docs/GenerateInviteLinkResponse.md)
  - [GenerateMfaTokenResponse](docs/GenerateMfaTokenResponse.md)
  - [Group](docs/Group.md)
  - [GroupResponse](docs/GroupResponse.md)
@@ -191,6 +192,7 @@ Method | HTTP request | Description
  - [UserMfaFactorsResponse](docs/UserMfaFactorsResponse.md)
  - [UserMfaFactorsResponseData](docs/UserMfaFactorsResponseData.md)
  - [UserMfaFactorsResponseDataAuthFactors](docs/UserMfaFactorsResponseDataAuthFactors.md)
+ - [UserResponse](docs/UserResponse.md)
  - [UserRolesResponse](docs/UserRolesResponse.md)
  - [UsersResponse](docs/UsersResponse.md)
 

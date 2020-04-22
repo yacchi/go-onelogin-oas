@@ -16,16 +16,17 @@ import (
 
 // CustomAttributesResponse struct for CustomAttributesResponse
 type CustomAttributesResponse struct {
-	Status *Status   `json:"status,omitempty"`
-	Data   *[]string `json:"data,omitempty"`
+	Status *Status    `json:"status,omitempty"`
+	Data   [][]string `json:"data"`
 }
 
 // NewCustomAttributesResponse instantiates a new CustomAttributesResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomAttributesResponse() *CustomAttributesResponse {
+func NewCustomAttributesResponse(data [][]string) *CustomAttributesResponse {
 	this := CustomAttributesResponse{}
+	this.Data = data
 	return &this
 }
 
@@ -69,36 +70,28 @@ func (o *CustomAttributesResponse) SetStatus(v Status) {
 	o.Status = &v
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *CustomAttributesResponse) GetData() []string {
-	if o == nil || o.Data == nil {
-		var ret []string
+// GetData returns the Data field value
+func (o *CustomAttributesResponse) GetData() [][]string {
+	if o == nil {
+		var ret [][]string
 		return ret
 	}
-	return *o.Data
+
+	return o.Data
 }
 
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CustomAttributesResponse) GetDataOk() (*[]string, bool) {
-	if o == nil || o.Data == nil {
+func (o *CustomAttributesResponse) GetDataOk() (*[][]string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Data, true
+	return &o.Data, true
 }
 
-// HasData returns a boolean if a field has been set.
-func (o *CustomAttributesResponse) HasData() bool {
-	if o != nil && o.Data != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetData gets a reference to the given []string and assigns it to the Data field.
-func (o *CustomAttributesResponse) SetData(v []string) {
-	o.Data = &v
+// SetData sets field value
+func (o *CustomAttributesResponse) SetData(v [][]string) {
+	o.Data = v
 }
 
 func (o CustomAttributesResponse) MarshalJSON() ([]byte, error) {
@@ -106,7 +99,7 @@ func (o CustomAttributesResponse) MarshalJSON() ([]byte, error) {
 	if o.Status != nil {
 		toSerialize["status"] = o.Status
 	}
-	if o.Data != nil {
+	if true {
 		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)

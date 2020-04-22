@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Status** | Pointer to [**Status**](Status.md) |  | [optional] 
 **Pagination** | Pointer to [**Pagination**](Pagination.md) |  | [optional] 
-**Data** | Pointer to [**[]UserApp**](UserApp.md) |  | [optional] 
+**Data** | Pointer to [**[]UserApp**](UserApp.md) |  | 
 
 ## Methods
 
 ### NewUserAppsResponse
 
-`func NewUserAppsResponse() *UserAppsResponse`
+`func NewUserAppsResponse(data []UserApp, ) *UserAppsResponse`
 
 NewUserAppsResponse instantiates a new UserAppsResponse object
 This constructor will assign default values to properties that have it defined,
@@ -96,11 +96,6 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
-### HasData
-
-`func (o *UserAppsResponse) HasData() bool`
-
-HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

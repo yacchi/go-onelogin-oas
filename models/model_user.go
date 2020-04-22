@@ -18,7 +18,7 @@ import (
 // User struct for User
 type User struct {
 	// User’s unique ID in OneLogin
-	Id *int32 `json:"id,omitempty"`
+	Id int32 `json:"id"`
 	// User’s email address, which he also uses to log in to OneLogin
 	Email string `json:"email"`
 	// If the user’s directory is set to authenticate using a user name value, this is the value used to sign in
@@ -80,8 +80,9 @@ type User struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUser(email string, username string, firstname string, lastname string) *User {
+func NewUser(id int32, email string, username string, firstname string, lastname string) *User {
 	this := User{}
+	this.Id = id
 	this.Email = email
 	this.Username = username
 	this.Firstname = firstname
@@ -97,36 +98,28 @@ func NewUserWithDefaults() *User {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *User) GetId() int32 {
-	if o == nil || o.Id == nil {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *User) GetIdOk() (*int32, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *User) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int32 and assigns it to the Id field.
+// SetId sets field value
 func (o *User) SetId(v int32) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetEmail returns the Email field value
@@ -995,7 +988,7 @@ func (o *User) SetCustomAttributes(v map[string]string) {
 
 func (o User) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if true {

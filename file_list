@@ -37,6 +37,7 @@ docs/EventType.md
 docs/EventTypesResponse.md
 docs/EventsApi.md
 docs/EventsResponse.md
+docs/GenerateInviteLinkResponse.md
 docs/GenerateMfaTokenResponse.md
 docs/Group.md
 docs/GroupResponse.md
@@ -89,6 +90,7 @@ docs/UserLoginResponse.md
 docs/UserMfaFactorsResponse.md
 docs/UserMfaFactorsResponseData.md
 docs/UserMfaFactorsResponseDataAuthFactors.md
+docs/UserResponse.md
 docs/UserRolesResponse.md
 docs/UsersApi.md
 docs/UsersResponse.md
@@ -113,6 +115,7 @@ models/model_event_response.go
 models/model_event_type.go
 models/model_event_types_response.go
 models/model_events_response.go
+models/model_generate_invite_link_response.go
 models/model_generate_mfa_token_response.go
 models/model_group.go
 models/model_group_response.go
@@ -158,6 +161,7 @@ models/model_user_login_response.go
 models/model_user_mfa_factors_response.go
 models/model_user_mfa_factors_response_data.go
 models/model_user_mfa_factors_response_data_auth_factors.go
+models/model_user_response.go
 models/model_user_roles_response.go
 models/model_users_response.go
 models/utils.go

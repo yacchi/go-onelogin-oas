@@ -750,16 +750,16 @@ func (c *APIClient) GetUser(ctx _context.Context, id int32) apiGetUserRequest {
 
 /*
 Execute executes the request
- @return models.CreateUserResponse
+ @return models.UserResponse
 */
-func (r apiGetUserRequest) Execute() (models.CreateUserResponse, *_nethttp.Response, error) {
+func (r apiGetUserRequest) Execute() (models.UserResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  models.CreateUserResponse
+		localVarReturnValue  models.UserResponse
 	)
 
 	localBasePath, err := r.client.cfg.ServerURLWithContext(r.ctx, "UsersApiService.GetUser")
@@ -813,7 +813,7 @@ func (r apiGetUserRequest) Execute() (models.CreateUserResponse, *_nethttp.Respo
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 200 {
-			var v models.CreateUserResponse
+			var v models.UserResponse
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

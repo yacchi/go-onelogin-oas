@@ -16,16 +16,17 @@ import (
 
 // UserRolesResponse struct for UserRolesResponse
 type UserRolesResponse struct {
-	Status *Status  `json:"status,omitempty"`
-	Data   *[]int32 `json:"data,omitempty"`
+	Status *Status   `json:"status,omitempty"`
+	Data   [][]int32 `json:"data"`
 }
 
 // NewUserRolesResponse instantiates a new UserRolesResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserRolesResponse() *UserRolesResponse {
+func NewUserRolesResponse(data [][]int32) *UserRolesResponse {
 	this := UserRolesResponse{}
+	this.Data = data
 	return &this
 }
 
@@ -69,36 +70,28 @@ func (o *UserRolesResponse) SetStatus(v Status) {
 	o.Status = &v
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *UserRolesResponse) GetData() []int32 {
-	if o == nil || o.Data == nil {
-		var ret []int32
+// GetData returns the Data field value
+func (o *UserRolesResponse) GetData() [][]int32 {
+	if o == nil {
+		var ret [][]int32
 		return ret
 	}
-	return *o.Data
+
+	return o.Data
 }
 
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *UserRolesResponse) GetDataOk() (*[]int32, bool) {
-	if o == nil || o.Data == nil {
+func (o *UserRolesResponse) GetDataOk() (*[][]int32, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Data, true
+	return &o.Data, true
 }
 
-// HasData returns a boolean if a field has been set.
-func (o *UserRolesResponse) HasData() bool {
-	if o != nil && o.Data != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetData gets a reference to the given []int32 and assigns it to the Data field.
-func (o *UserRolesResponse) SetData(v []int32) {
-	o.Data = &v
+// SetData sets field value
+func (o *UserRolesResponse) SetData(v [][]int32) {
+	o.Data = v
 }
 
 func (o UserRolesResponse) MarshalJSON() ([]byte, error) {
@@ -106,7 +99,7 @@ func (o UserRolesResponse) MarshalJSON() ([]byte, error) {
 	if o.Status != nil {
 		toSerialize["status"] = o.Status
 	}
-	if o.Data != nil {
+	if true {
 		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)

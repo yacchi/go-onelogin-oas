@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | User’s unique ID in OneLogin | [optional] 
+**Id** | Pointer to **int32** | User’s unique ID in OneLogin | 
 **Email** | Pointer to **string** | User’s email address, which he also uses to log in to OneLogin | 
 **Username** | Pointer to **string** | If the user’s directory is set to authenticate using a user name value, this is the value used to sign in | 
 **Firstname** | Pointer to **string** | User’s first name | 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 
 ### NewUser
 
-`func NewUser(email string, username string, firstname string, lastname string, ) *User`
+`func NewUser(id int32, email string, username string, firstname string, lastname string, ) *User`
 
 NewUser instantiates a new User object
 This constructor will assign default values to properties that have it defined,
@@ -72,11 +72,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *User) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetEmail
 

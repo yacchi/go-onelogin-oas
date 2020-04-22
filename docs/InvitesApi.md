@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## CreateInviteLink
 
-> models.CustomAttributesResponse CreateInviteLink(ctx).InlineObject14(inlineObject14).Execute()
+> models.GenerateInviteLinkResponse CreateInviteLink(ctx).InlineObject14(inlineObject14).Execute()
 
 Generate Invite Link
 
@@ -32,7 +32,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**models.CustomAttributesResponse**](CustomAttributesResponse.md)
+[**models.GenerateInviteLinkResponse**](GenerateInviteLinkResponse.md)
 
 ### Authorization
 

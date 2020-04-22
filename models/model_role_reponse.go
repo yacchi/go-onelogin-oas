@@ -17,15 +17,16 @@ import (
 // RoleReponse struct for RoleReponse
 type RoleReponse struct {
 	Status *Status `json:"status,omitempty"`
-	Data   *[]Role `json:"data,omitempty"`
+	Data   []Role  `json:"data"`
 }
 
 // NewRoleReponse instantiates a new RoleReponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoleReponse() *RoleReponse {
+func NewRoleReponse(data []Role) *RoleReponse {
 	this := RoleReponse{}
+	this.Data = data
 	return &this
 }
 
@@ -69,36 +70,28 @@ func (o *RoleReponse) SetStatus(v Status) {
 	o.Status = &v
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
+// GetData returns the Data field value
 func (o *RoleReponse) GetData() []Role {
-	if o == nil || o.Data == nil {
+	if o == nil {
 		var ret []Role
 		return ret
 	}
-	return *o.Data
+
+	return o.Data
 }
 
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *RoleReponse) GetDataOk() (*[]Role, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Data, true
+	return &o.Data, true
 }
 
-// HasData returns a boolean if a field has been set.
-func (o *RoleReponse) HasData() bool {
-	if o != nil && o.Data != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetData gets a reference to the given []Role and assigns it to the Data field.
+// SetData sets field value
 func (o *RoleReponse) SetData(v []Role) {
-	o.Data = &v
+	o.Data = v
 }
 
 func (o RoleReponse) MarshalJSON() ([]byte, error) {
@@ -106,7 +99,7 @@ func (o RoleReponse) MarshalJSON() ([]byte, error) {
 	if o.Status != nil {
 		toSerialize["status"] = o.Status
 	}
-	if o.Data != nil {
+	if true {
 		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)

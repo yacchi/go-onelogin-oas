@@ -4,6 +4,7 @@ TARGET = 1.1.0-oas3
 SPEC_URL = https://api.swaggerhub.com/apis/OneLogin-Auth/onelogin-api/$(TARGET)
 SPEC_FILE = build/$(TARGET).json
 SERVERS_JSON = src/servers.json
+SPEC_PATCH = src/patch.jq
 
 TEMPLATE = src/templates
 GENERATOR = src/go-client.groovy
@@ -11,7 +12,7 @@ GENERATE_TMP_DIR = tmp
 FILE_LIST = file_list
 
 PACKAGE_NAME = github.com/yacchi/go-onelogin-oas
-PACKAGE_VERSION = 0.1.5
+PACKAGE_VERSION = 0.2.0
 
 .PHONY: all
 all: $(SPEC_FILE) generate
@@ -22,8 +23,8 @@ $(BUILD_DIR):
 .PHONY: spec
 spec: $(SPEC_FILE)
 
-$(SPEC_FILE): $(BUILD_DIR) $(SERVERS_JSON)
-	curl $(SPEC_URL) | jq -s add - src/servers.json > $(SPEC_FILE).tmp
+$(SPEC_FILE): $(BUILD_DIR) $(SERVERS_JSON) $(SPEC_PATCH)
+	curl $(SPEC_URL) | jq -s -f $(SPEC_PATCH) - $(SERVERS_JSON) > $(SPEC_FILE).tmp
 	mv $(SPEC_FILE).tmp $(SPEC_FILE)
 
 .PHONY: generate

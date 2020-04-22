@@ -231,7 +231,7 @@ Other parameters are passed through a pointer to a apiGetCustomAttributesRequest
 
 ## GetUser
 
-> models.CreateUserResponse GetUser(ctx, id).Execute()
+> models.UserResponse GetUser(ctx, id).Execute()
 
 Get a User
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**models.CreateUserResponse**](CreateUserResponse.md)
+[**models.UserResponse**](UserResponse.md)
 
 ### Authorization
 

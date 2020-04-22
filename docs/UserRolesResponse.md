@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Status** | Pointer to [**Status**](Status.md) |  | [optional] 
-**Data** | Pointer to **[]int32** |  | [optional] 
+**Data** | Pointer to [**[][]int32**](array.md) |  | 
 
 ## Methods
 
 ### NewUserRolesResponse
 
-`func NewUserRolesResponse() *UserRolesResponse`
+`func NewUserRolesResponse(data [][]int32, ) *UserRolesResponse`
 
 NewUserRolesResponse instantiates a new UserRolesResponse object
 This constructor will assign default values to properties that have it defined,
@@ -53,28 +53,23 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *UserRolesResponse) GetData() []int32`
+`func (o *UserRolesResponse) GetData() [][]int32`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *UserRolesResponse) GetDataOk() (*[]int32, bool)`
+`func (o *UserRolesResponse) GetDataOk() (*[][]int32, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *UserRolesResponse) SetData(v []int32)`
+`func (o *UserRolesResponse) SetData(v [][]int32)`
 
 SetData sets Data field to given value.
 
-### HasData
-
-`func (o *UserRolesResponse) HasData() bool`
-
-HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

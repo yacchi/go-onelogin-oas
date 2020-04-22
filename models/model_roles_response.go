@@ -18,15 +18,16 @@ import (
 type RolesResponse struct {
 	Status     *Status     `json:"status,omitempty"`
 	Pagination *Pagination `json:"pagination,omitempty"`
-	Data       *[]Role     `json:"data,omitempty"`
+	Data       []Role      `json:"data"`
 }
 
 // NewRolesResponse instantiates a new RolesResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRolesResponse() *RolesResponse {
+func NewRolesResponse(data []Role) *RolesResponse {
 	this := RolesResponse{}
+	this.Data = data
 	return &this
 }
 
@@ -102,36 +103,28 @@ func (o *RolesResponse) SetPagination(v Pagination) {
 	o.Pagination = &v
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
+// GetData returns the Data field value
 func (o *RolesResponse) GetData() []Role {
-	if o == nil || o.Data == nil {
+	if o == nil {
 		var ret []Role
 		return ret
 	}
-	return *o.Data
+
+	return o.Data
 }
 
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
 func (o *RolesResponse) GetDataOk() (*[]Role, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Data, true
+	return &o.Data, true
 }
 
-// HasData returns a boolean if a field has been set.
-func (o *RolesResponse) HasData() bool {
-	if o != nil && o.Data != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetData gets a reference to the given []Role and assigns it to the Data field.
+// SetData sets field value
 func (o *RolesResponse) SetData(v []Role) {
-	o.Data = &v
+	o.Data = v
 }
 
 func (o RolesResponse) MarshalJSON() ([]byte, error) {
@@ -142,7 +135,7 @@ func (o RolesResponse) MarshalJSON() ([]byte, error) {
 	if o.Pagination != nil {
 		toSerialize["pagination"] = o.Pagination
 	}
-	if o.Data != nil {
+	if true {
 		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)

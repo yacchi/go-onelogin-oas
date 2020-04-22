@@ -50,16 +50,16 @@ func (c *APIClient) CreateInviteLink(ctx _context.Context) apiCreateInviteLinkRe
 
 /*
 Execute executes the request
- @return models.CustomAttributesResponse
+ @return models.GenerateInviteLinkResponse
 */
-func (r apiCreateInviteLinkRequest) Execute() (models.CustomAttributesResponse, *_nethttp.Response, error) {
+func (r apiCreateInviteLinkRequest) Execute() (models.GenerateInviteLinkResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  models.CustomAttributesResponse
+		localVarReturnValue  models.GenerateInviteLinkResponse
 	)
 
 	localBasePath, err := r.client.cfg.ServerURLWithContext(r.ctx, "InvitesApiService.CreateInviteLink")
@@ -114,7 +114,7 @@ func (r apiCreateInviteLinkRequest) Execute() (models.CustomAttributesResponse, 
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 200 {
-			var v models.CustomAttributesResponse
+			var v models.GenerateInviteLinkResponse
 			err = r.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
