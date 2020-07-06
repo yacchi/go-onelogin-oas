@@ -1,0 +1,7 @@
+docs/*.md linguist-generated=true
+models/*.go linguist-generated=true
+api_*.go linguist-generated=true
+client.go linguist-generated=true
+configuration.go linguist-generated=true
+file_list linguist-generated=true
+README.md linguist-generated=true
